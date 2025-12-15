@@ -1,6 +1,5 @@
 // embedded-hal-bus 0.1 location:
 use embedded_hal_bus::spi::MutexDevice;
-use esp_idf_hal::prelude::*;
 use esp_idf_hal::task::block_on;
 use esp_idf_svc::hal as esp_idf_hal;
 use log::*;
@@ -10,7 +9,25 @@ mod display;
 mod hardware;
 mod radio;
 
+// Wrapper to allow blocking SPI to be used where Async SPI is expected
+// This blocks the executor thread, which is acceptable in esp-idf threaded context.
+pub struct BlockingAsyncSpi<T>(T);
+
+impl<T: embedded_hal::spi::ErrorType> embedded_hal::spi::ErrorType for BlockingAsyncSpi<T> {
+    type Error = T::Error;
+}
+
+impl<T: embedded_hal::spi::SpiDevice> embedded_hal_async::spi::SpiDevice for BlockingAsyncSpi<T> {
+    async fn transaction(
+        &mut self,
+        operations: &mut [embedded_hal::spi::Operation<'_, u8>],
+    ) -> Result<(), T::Error> {
+        self.0.transaction(operations)
+    }
+}
+
 fn main() -> anyhow::Result<()> {
+    // Check-cfg are handled in build.rs
     esp_idf_svc::sys::link_patches();
     esp_idf_svc::log::EspLogger::initialize_default();
 
@@ -37,20 +54,12 @@ fn main() -> anyhow::Result<()> {
     info!("Display Initialized.");
 
     // Async Device for Radio
-    // Note: embedded_hal_bus::spi::MutexDevice implements embedded_hal_async::spi::SpiDevice
-    // IF the underlying bus is also async capable or assumed so.
-    // However, esp-idf-hal SpiDriver is inherently blocking.
-    // In many cases, blocking impls satisfy Async traits by just completing immediately (poll_ready -> Ready).
-    // If logic fails here, we might need to wrap `MutexDevice` in a custom `AsyncAdapter`.
-    // But for now, we rely on `embedded-hal-bus` blanket impls.
+    // Wrap the blocking MutexDevice in our adapter
+    let radio_spi = BlockingAsyncSpi(MutexDevice::new(&spi_bus));
 
-    let radio_spi = MutexDevice::new(&spi_bus);
-
+    // Display is moved into the block
     block_on(async {
         info!("Initializing Radio (Async)...");
-        // We pass the MutexDevice. If generics align, this works.
-        // If compilation fails saying MutexDevice doesn't impl Async SpiDevice,
-        // we will need to create a dummy wrapper.
 
         let mut radio = radio::TunggerRadio::new(
             radio_spi,
@@ -64,12 +73,14 @@ fn main() -> anyhow::Result<()> {
         radio.configure(&radio::RadioConfig::default()).await?;
         info!("Radio Initialized.");
 
-        Ok::<(), anyhow::Error>(())
+        loop {
+            // Logic loop
+            std::thread::sleep(std::time::Duration::from_secs(5));
+
+            display.update(&mut display_spi, "Tick")?;
+            info!("Tick");
+        }
     })?;
 
-    loop {
-        // Logic loop
-        std::thread::sleep(std::time::Duration::from_secs(5));
-        display.update(&mut MutexDevice::new(&spi_bus), "Tick")?;
-    }
+    Ok(())
 }

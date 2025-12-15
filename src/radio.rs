@@ -1,20 +1,7 @@
-use embedded_hal::delay::DelayNs;
+use esp_idf_hal::delay::Ets;
 use esp_idf_hal::gpio::*;
-use lora_phy::sx126x::{Sx126x, Sx126xVariant, TcxoCtrlVoltage};
+use lora_phy::sx126x::{self, Sx1262, Sx126x};
 use lora_phy::LoRa;
-
-// Async Delay Wrapper for Ets
-#[derive(Clone, Copy)]
-pub struct AsyncEts;
-
-impl embedded_hal_async::delay::DelayNs for AsyncEts {
-    async fn delay_ns(&mut self, ns: u32) {
-        // Ets is blocking, but for simple delays in async context without a real reactor,
-        // blocking is "acceptable" though it freezes the executor.
-        // For now, to make types align:
-        Ets.delay_ns(ns);
-    }
-}
 
 pub struct RadioConfig {
     pub frequency: u32,
@@ -59,24 +46,8 @@ pub struct TunggerRadio<'d, SPI>
 where
     SPI: embedded_hal_async::spi::SpiDevice,
 {
-    // Simplified generics: generic over SPI, but concrete over variant (Sx126xVariant).
-    // Sx126xVariant is the enum type in lora-phy.
-    // The Sx126x struct takes <SPI, IV, Delay>.
-    pub lora: LoRa<Sx126x<SPI, Sx126xVariant, AsyncEts>, AsyncEts>,
+    pub lora: LoRa<Sx126x<SPI, Sx1262, Ets>, Ets>,
 }
-// Note: LoRa takes <RK, DLY>. RK = Sx126x<...>.
-// Error `Ets does not implement DelayNs`.
-// If Ets is blocking, we need to wrap it or use a different delay.
-// Let's assume for now we use `esp_idf_hal::delay::Ets` and ignored the error? No, user reported it fails.
-// We need a delay that works. `lora-phy` re-exports `embedded_hal::delay::DelayNs`.
-// Ets implements it.
-// Why error? "the trait bound `Ets: lora_phy::DelayNs` is not satisfied".
-// Maybe version mismatch between `esp-idf-hal`'s `embedded-hal` and `lora-phy`'s `embedded-hal`.
-// `esp-idf-hal` 0.43 -> `embedded-hal` 1.0.
-// `lora-phy` 3 -> `embedded-hal` 1.0 (async supported).
-// Maybe `lora-phy::DelayNs` is `embedded_hal_async::delay::DelayNs`?
-// If LoRa is async, it needs async delay. Ets is blocking delay.
-// We need an async delay wrapper.
 
 impl<'d, SPI> TunggerRadio<'d, SPI>
 where
@@ -89,16 +60,19 @@ where
         busy: PinDriver<'d, Gpio13, Input>,
         dio1: PinDriver<'d, Gpio14, Input>,
     ) -> anyhow::Result<Self> {
-        let config = lora_phy::sx126x::Config {
-            tcxo_ctrl: Some(TcxoCtrlVoltage::Ctrl1V7),
+        let config = sx126x::Config {
+            chip: Sx1262,
+            tcxo_ctrl: Some(sx126x::TcxoCtrlVoltage::Ctrl1V7),
             use_dcdc: true,
             rx_boost: false,
         };
 
-        // Construct Sx1262 directly
-        let radio_kind = Sx1262::new(spi, nss, rst, busy, dio1, AsyncEts, config);
+        let delay = Ets;
 
-        let lora = LoRa::new(radio_kind, true, AsyncEts)
+        // Construct Sx1262 directly
+        let radio_kind = Sx126x::new(spi, nss, rst, busy, dio1, delay, config);
+
+        let lora = LoRa::new(radio_kind, true, delay)
             .await
             .map_err(|e| anyhow::anyhow!("LoRa init failed: {:?}", e))?;
 
