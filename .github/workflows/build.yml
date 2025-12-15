@@ -10,6 +10,7 @@ on:
 env:
   CARGO_TERM_COLOR: always
   ESP_IDF_VERSION: v5.1.3 # Matching valid sync with esp-idf-svc 0.48
+  IDF_GITHUB_ASSETS: dl.espressif.com/github_assets # Use mirror to avoid GitHub 504 Timeouts
 
 jobs:
   build:
