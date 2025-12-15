@@ -1,3 +1,4 @@
+    Blocking waiting for file lock on package cache
 error: rustc 1.86.0-nightly is not supported by the following package:
   home@0.5.12 requires rustc 1.88
 Either upgrade rustc or select compatible dependency versions with
