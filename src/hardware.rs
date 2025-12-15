@@ -33,7 +33,7 @@ pub fn init() -> anyhow::Result<Board> {
     let miso = pins.gpio11;
 
     // Initialize SPI Driver (Shared Bus)
-    let config = config::Config::new().baudrate(2.MHz().into());
+    let config = config::DriverConfig::default();
     let spi_bus = SpiDriver::new(peripherals.spi2, sclk, mosi, Some(miso), &config)?;
 
     // Radio

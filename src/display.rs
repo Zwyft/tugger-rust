@@ -31,9 +31,8 @@ where
     ) -> anyhow::Result<Self> {
         let mut delay = Ets;
 
-        // Epd2in9::new signature: (spi, cs, dc, rst, busy, delay)
-        // Checking commonwaveshare signatures... usually (spi, cs, dc, rst, busy, delay)
-        let epd = Epd2in9::new(spi, cs, dc, rst, busy, &mut delay)
+        // Epd2in9::new signature: (spi, cs, busy, dc, rst, delay)
+        let epd = Epd2in9::new(spi, cs, busy, dc, rst, &mut delay)
             .map_err(|_| anyhow::anyhow!("EPD Init failed"))?;
 
         let mut display = Display2in9::default();

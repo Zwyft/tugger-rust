@@ -59,19 +59,10 @@ pub struct TunggerRadio<'d, SPI>
 where
     SPI: embedded_hal_async::spi::SpiDevice,
 {
-    pub lora: LoRa<
-        Sx126x<
-            SPI,
-            Sx126xVariant<
-                PinDriver<'d, Gpio8, Output>,
-                PinDriver<'d, Gpio12, Output>,
-                PinDriver<'d, Gpio13, Input>,
-                PinDriver<'d, Gpio14, Input>,
-            >,
-            Ets,
-        >,
-        Ets,
-    >,
+    // Simplified generics: generic over SPI, but concrete over variant (Sx126xVariant).
+    // Sx126xVariant is the enum type in lora-phy.
+    // The Sx126x struct takes <SPI, IV, Delay>.
+    pub lora: LoRa<Sx126x<SPI, Sx126xVariant, AsyncEts>, AsyncEts>,
 }
 // Note: LoRa takes <RK, DLY>. RK = Sx126x<...>.
 // Error `Ets does not implement DelayNs`.
@@ -103,7 +94,7 @@ where
 
         // config is `lora_phy::sx126x::Config`
         let config = lora_phy::sx126x::Config {
-            chip: lora_phy::sx126x::BoardType::Sx1262,
+            // chip field removed/inferred in newer versions or handled by Variant
             tcxo_ctrl: Some(TcxoCtrlVoltage::Ctrl1V7),
             use_dcdc: true,
             rx_boost: false,
