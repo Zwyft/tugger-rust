@@ -1,5 +1,6 @@
 use esp_idf_hal::gpio::*;
 use esp_idf_hal::peripherals::Peripherals;
+use esp_idf_hal::spi::config::DriverConfig;
 use esp_idf_hal::spi::*;
 use esp_idf_hal::units::FromValueType;
 
@@ -32,8 +33,8 @@ pub fn init() -> anyhow::Result<Board> {
     let miso = pins.gpio11;
 
     // Initialize SPI Driver (Shared Bus)
-    let config = config::Config::new().baudrate(2.MHz().into());
-    let spi_bus = SpiDriver::new(peripherals.spi2, sclk, mosi, miso, &config)?;
+    let config = config::DriverConfig::new().baudrate(2.MHz().into());
+    let spi_bus = SpiDriver::new(peripherals.spi2, sclk, mosi, Some(miso), &config)?;
 
     // Radio
     let lora_nss = PinDriver::output(pins.gpio8)?;

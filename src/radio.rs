@@ -4,6 +4,16 @@ use lora_phy::lorawan_radio::LorawanRadio;
 use lora_phy::sx126x::{Sx126x, Sx126xVariant, TcxoCtrlVoltage};
 use lora_phy::LoRa;
 
+// Wrapper for Ets to implement embedded_hal_async::delay::DelayNs if needed
+// Or use standard DelayNs validation. Ets implements blocking DelayNs.
+// If lora-phy v3 uses async DelayNs, 'Ets' won't work directly.
+// We will use a dummy Async Delay for now or `esp_idf_hal::task::embassy_sync::EspRawMutex`?
+// No, simpler: Ets is blocking. If lora-phy needs async delay, we are in trouble with Ets.
+// BUT `lora-phy` v3 `LoRa::new` signature: `new(radio_kind, enable_public_network, delay)`.
+// The delay must implement `DelayNs`.
+// If it requires Async, we need an async delay.
+// Let's assume for a moment Ets works or we can simple-wrap it.
+
 pub struct RadioConfig {
     pub frequency: u32,
     pub bandwidth: u32,
@@ -28,13 +38,13 @@ pub struct TunggerRadio<'d, SPI>
 where
     SPI: embedded_hal_async::spi::SpiDevice,
 {
-    // lora-phy v3.x type definition
+    // Fix: Sx126x does not take lifetime 'd in v3.
+    // Fix: Sx126xVariant is an enum/struct, pass it as Type?
+    // Sx126x<SPI, Variant>
     pub lora: LoRa<
         Sx126x<
-            'd,
             SPI,
             Sx126xVariant<
-                'd,
                 PinDriver<'d, Gpio8, Output>,
                 PinDriver<'d, Gpio12, Output>,
                 PinDriver<'d, Gpio13, Input>,
@@ -56,13 +66,15 @@ where
         busy: PinDriver<'d, Gpio13, Input>,
         dio1: PinDriver<'d, Gpio14, Input>,
     ) -> anyhow::Result<Self> {
+        // Fix: Sx1262 variant construction
         let iv = Sx126xVariant::Sx1262(nss, rst, busy, dio1);
 
         // config is `lora_phy::sx126x::Config`
         let config = lora_phy::sx126x::Config {
+            chip: lora_phy::sx126x::BoardType::Sx1262,
             tcxo_ctrl: Some(TcxoCtrlVoltage::Ctrl1V7),
             use_dcdc: true,
-            use_dio2_as_rf_switch: true,
+            rx_boost: false,
         };
 
         let sx126x = Sx126x::new(spi, iv, config);

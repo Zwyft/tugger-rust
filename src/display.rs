@@ -31,7 +31,7 @@ where
     ) -> anyhow::Result<Self> {
         let mut delay = Ets;
 
-        let epd = Epd2in9::new(spi, cs, busy, dc, rst, &mut delay)
+        let epd = Epd2in9::new(spi, cs, busy, dc, rst, &mut delay, None)
             .map_err(|_| anyhow::anyhow!("EPD Init failed"))?;
 
         let mut display = Display2in9::default();
