@@ -10,7 +10,7 @@ use esp_idf_hal::gpio::*;
 pub struct TunggerDisplay<SPI> {
     epd: Epd2in9<
         SPI,
-        PinDriver<'static, Gpio4, Output>,
+        PinDriver<'static, Gpio7, Input>,
         PinDriver<'static, Gpio5, Output>,
         PinDriver<'static, Gpio6, Output>,
         Ets,
@@ -27,12 +27,12 @@ where
         cs: PinDriver<'static, Gpio4, Output>,
         dc: PinDriver<'static, Gpio5, Output>,
         rst: PinDriver<'static, Gpio6, Output>,
-        _busy: PinDriver<'static, Gpio7, Input>,
+        busy: PinDriver<'static, Gpio7, Input>,
     ) -> anyhow::Result<Self> {
         let mut delay = Ets;
 
-        // Epd2in9::new signature: (spi, cs, dc, rst, delay, speed)
-        let epd = Epd2in9::new(spi, cs, dc, rst, &mut delay, None)
+        // Epd2in9::new signature: (spi, cs, dc, rst, busy, delay) - 6 arguments
+        let epd = Epd2in9::new(spi, cs, dc, rst, busy, &mut delay)
             .map_err(|_| anyhow::anyhow!("EPD Init failed"))?;
 
         let mut display = Display2in9::default();

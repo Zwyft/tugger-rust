@@ -1,5 +1,6 @@
 use esp_idf_hal::delay::Ets;
 use esp_idf_hal::gpio::*;
+use lora_phy::iv::GenericSx126xInterfaceVariant;
 use lora_phy::sx126x::{self, Sx1262, Sx126x};
 use lora_phy::LoRa;
 
@@ -46,7 +47,19 @@ pub struct TunggerRadio<'d, SPI>
 where
     SPI: embedded_hal_async::spi::SpiDevice,
 {
-    pub lora: LoRa<Sx126x<SPI, Sx1262, Ets>, Ets>,
+    pub lora: LoRa<
+        Sx126x<
+            SPI,
+            GenericSx126xInterfaceVariant<
+                PinDriver<'d, Gpio8, Output>,
+                PinDriver<'d, Gpio12, Output>,
+                PinDriver<'d, Gpio14, Input>,
+                PinDriver<'d, Gpio13, Input>,
+            >,
+            Ets,
+        >,
+        Ets,
+    >,
 }
 
 impl<'d, SPI> TunggerRadio<'d, SPI>
@@ -69,8 +82,11 @@ where
 
         let delay = Ets;
 
+        let iv = GenericSx126xInterfaceVariant::new(nss, rst, dio1, busy, None)
+            .map_err(|e| anyhow::anyhow!("IV init failed: {:?}", e))?;
+
         // Construct Sx1262 directly
-        let radio_kind = Sx126x::new(spi, nss, rst, busy, dio1, delay, config);
+        let radio_kind = Sx126x::new(spi, iv, config);
 
         let lora = LoRa::new(radio_kind, true, delay)
             .await

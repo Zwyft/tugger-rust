@@ -1,6 +1,2387 @@
-error: rustc 1.86.0-nightly is not supported by the following package:
-  home@0.5.12 requires rustc 1.88
-Either upgrade rustc or select compatible dependency versions with
-`cargo update <name>@<current-ver> --precise <compatible-ver>`
-where `<compatible-ver>` is the latest version supporting rustc 1.86.0-nightly
+   0.724047600s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="tugger-device"}: cargo::core::compiler::fingerprint: fingerprint error for tugger-device v0.1.0 (D:\AntigravityProjects\Tugr)/Check { test: false }/TargetInner { name: "tugger-device", doc: true, ..: with_path("D:\\AntigravityProjects\\Tugr\\src\\main.rs", Edition2021) }
+   0.724141500s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="tugger-device"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\tugger-device-bb963b875dad43c5\bin-tugger-device`
 
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_odb_object_data
+  18: git_filter_source_repo
+  19: git_midx_writer_new
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.769750600s  INFO prepare_target{force=false package_id=embedded-svc v0.27.1 target="embedded_svc"}: cargo::core::compiler::fingerprint: fingerprint error for embedded-svc v0.27.1/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("embedded_svc", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\embedded-svc-0.27.1\\src\\lib.rs", Edition2021) }
+   0.769780900s  INFO prepare_target{force=false package_id=embedded-svc v0.27.1 target="embedded_svc"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\embedded-svc-74dba58e7a53cd6e\lib-embedded_svc`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_odb_object_data
+  19: git_filter_source_repo
+  20: git_midx_writer_new
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.772700000s  INFO prepare_target{force=false package_id=enumset v1.1.10 target="enumset"}: cargo::core::compiler::fingerprint: fingerprint error for enumset v1.1.10/Check { test: false }/TargetInner { ..: lib_target("enumset", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\enumset-1.1.10\\src\\lib.rs", Edition2021) }
+   0.772737800s  INFO prepare_target{force=false package_id=enumset v1.1.10 target="enumset"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\enumset-09a349321ab562a8\lib-enumset`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_odb_object_data
+  20: git_filter_source_repo
+  21: git_midx_writer_new
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.773482000s  INFO prepare_target{force=false package_id=enumset_derive v0.14.0 target="enumset_derive"}: cargo::core::compiler::fingerprint: fingerprint error for enumset_derive v0.14.0/Build/TargetInner { for_host: true, proc_macro: true, ..: lib_target("enumset_derive", ["proc-macro"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\enumset_derive-0.14.0\\src\\lib.rs", Edition2021) }
+   0.773509300s  INFO prepare_target{force=false package_id=enumset_derive v0.14.0 target="enumset_derive"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\enumset_derive-13ddc07cef1f34e8\lib-enumset_derive`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_odb_object_data
+  21: git_filter_source_repo
+  22: git_midx_writer_new
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.774111200s  INFO prepare_target{force=false package_id=darling v0.21.3 target="darling"}: cargo::core::compiler::fingerprint: fingerprint error for darling v0.21.3/Build/TargetInner { ..: lib_target("darling", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\darling-0.21.3\\src\\lib.rs", Edition2021) }
+   0.774133600s  INFO prepare_target{force=false package_id=darling v0.21.3 target="darling"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\darling-b9d98da4437e6ba3\lib-darling`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_odb_object_data
+  22: git_filter_source_repo
+  23: git_midx_writer_new
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.774695800s  INFO prepare_target{force=false package_id=darling_core v0.21.3 target="darling_core"}: cargo::core::compiler::fingerprint: fingerprint error for darling_core v0.21.3/Build/TargetInner { ..: lib_target("darling_core", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\darling_core-0.21.3\\src\\lib.rs", Edition2021) }
+   0.774716300s  INFO prepare_target{force=false package_id=darling_core v0.21.3 target="darling_core"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\darling_core-2eccbfc7728858a1\lib-darling_core`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_odb_object_data
+  23: git_filter_source_repo
+  24: git_midx_writer_new
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.780512000s  INFO prepare_target{force=false package_id=syn v2.0.111 target="syn"}: cargo::core::compiler::fingerprint: fingerprint error for syn v2.0.111/Build/TargetInner { ..: lib_target("syn", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\syn-2.0.111\\src\\lib.rs", Edition2021) }
+   0.780557400s  INFO prepare_target{force=false package_id=syn v2.0.111 target="syn"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\syn-46f32dea9785a05f\lib-syn`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_odb_object_data
+  24: git_filter_source_repo
+  25: git_midx_writer_new
+  26: BaseThreadInitThunk
+  27: RtlUserThreadStart
+   0.781413100s  INFO prepare_target{force=false package_id=darling_macro v0.21.3 target="darling_macro"}: cargo::core::compiler::fingerprint: fingerprint error for darling_macro v0.21.3/Build/TargetInner { for_host: true, proc_macro: true, ..: lib_target("darling_macro", ["proc-macro"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\darling_macro-0.21.3\\src\\lib.rs", Edition2021) }
+   0.781443100s  INFO prepare_target{force=false package_id=darling_macro v0.21.3 target="darling_macro"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\darling_macro-987c09c2c3e53a00\lib-darling_macro`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_odb_object_data
+  23: git_filter_source_repo
+  24: git_midx_writer_new
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.782102200s  INFO prepare_target{force=false package_id=serde v1.0.228 target="serde"}: cargo::core::compiler::fingerprint: fingerprint error for serde v1.0.228/Check { test: false }/TargetInner { ..: lib_target("serde", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde-1.0.228\\src\\lib.rs", Edition2021) }
+   0.782124500s  INFO prepare_target{force=false package_id=serde v1.0.228 target="serde"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\serde-fca96a98d8b20a95\lib-serde`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_odb_object_data
+  21: git_filter_source_repo
+  22: git_midx_writer_new
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.785806000s  INFO prepare_target{force=false package_id=serde_derive v1.0.228 target="serde_derive"}: cargo::core::compiler::fingerprint: fingerprint error for serde_derive v1.0.228/Build/TargetInner { for_host: true, proc_macro: true, ..: lib_target("serde_derive", ["proc-macro"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_derive-1.0.228\\src\\lib.rs", Edition2021) }
+   0.785834700s  INFO prepare_target{force=false package_id=serde_derive v1.0.228 target="serde_derive"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\serde_derive-4cf8cee032533e24\lib-serde_derive`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_odb_object_data
+  22: git_filter_source_repo
+  23: git_midx_writer_new
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.786450100s  INFO prepare_target{force=false package_id=heapless v0.8.0 target="heapless"}: cargo::core::compiler::fingerprint: fingerprint error for heapless v0.8.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("heapless", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\heapless-0.8.0\\src\\lib.rs", Edition2021) }
+   0.786471200s  INFO prepare_target{force=false package_id=heapless v0.8.0 target="heapless"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\heapless-49597fb44826cbb4\lib-heapless`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_odb_object_data
+  20: git_filter_source_repo
+  21: git_midx_writer_new
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.789367500s  INFO prepare_target{force=false package_id=no-std-net v0.5.0 target="no_std_net"}: cargo::core::compiler::fingerprint: fingerprint error for no-std-net v0.5.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("no_std_net", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\no-std-net-0.5.0\\src\\lib.rs", Edition2015) }
+   0.789402600s  INFO prepare_target{force=false package_id=no-std-net v0.5.0 target="no_std_net"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\no-std-net-c98b18686f372297\lib-no_std_net`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_odb_object_data
+  20: git_filter_source_repo
+  21: git_midx_writer_new
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.790174700s  INFO prepare_target{force=false package_id=num_enum v0.7.5 target="num_enum"}: cargo::core::compiler::fingerprint: fingerprint error for num_enum v0.7.5/Check { test: false }/TargetInner { ..: lib_target("num_enum", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\num_enum-0.7.5\\src\\lib.rs", Edition2021) }
+   0.790195900s  INFO prepare_target{force=false package_id=num_enum v0.7.5 target="num_enum"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\num_enum-c0098fbd77d520c0\lib-num_enum`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_odb_object_data
+  20: git_filter_source_repo
+  21: git_midx_writer_new
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.790775200s  INFO prepare_target{force=false package_id=num_enum_derive v0.7.5 target="num_enum_derive"}: cargo::core::compiler::fingerprint: fingerprint error for num_enum_derive v0.7.5/Build/TargetInner { for_host: true, proc_macro: true, ..: lib_target("num_enum_derive", ["proc-macro"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\num_enum_derive-0.7.5\\src\\lib.rs", Edition2021) }
+   0.790800400s  INFO prepare_target{force=false package_id=num_enum_derive v0.7.5 target="num_enum_derive"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\num_enum_derive-ee08167af93ae137\lib-num_enum_derive`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_odb_object_data
+  21: git_filter_source_repo
+  22: git_midx_writer_new
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.795551000s  INFO prepare_target{force=false package_id=strum v0.25.0 target="strum"}: cargo::core::compiler::fingerprint: fingerprint error for strum v0.25.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("strum", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\strum-0.25.0\\src\\lib.rs", Edition2018) }
+   0.795586500s  INFO prepare_target{force=false package_id=strum v0.25.0 target="strum"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\strum-093d3d11763154cb\lib-strum`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_odb_object_data
+  20: git_filter_source_repo
+  21: git_midx_writer_new
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.796231600s  INFO prepare_target{force=false package_id=strum_macros v0.25.3 target="strum_macros"}: cargo::core::compiler::fingerprint: fingerprint error for strum_macros v0.25.3/Build/TargetInner { for_host: true, proc_macro: true, ..: lib_target("strum_macros", ["proc-macro"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\strum_macros-0.25.3\\src\\lib.rs", Edition2018) }
+   0.796256700s  INFO prepare_target{force=false package_id=strum_macros v0.25.3 target="strum_macros"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\strum_macros-acc687629a2f3367\lib-strum_macros`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_odb_object_data
+  21: git_filter_source_repo
+  22: git_midx_writer_new
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.798120500s  INFO prepare_target{force=false package_id=esp-idf-hal v0.44.1 target="esp_idf_hal"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-hal v0.44.1/Check { test: false }/TargetInner { harness: false, ..: lib_target("esp_idf_hal", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-hal-0.44.1\\src\\lib.rs", Edition2021) }
+   0.798153700s  INFO prepare_target{force=false package_id=esp-idf-hal v0.44.1 target="esp_idf_hal"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\esp-idf-hal-10050596ce2ff312\lib-esp_idf_hal`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_odb_object_data
+  19: git_filter_source_repo
+  20: git_midx_writer_new
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.799629500s  INFO prepare_target{force=false package_id=embassy-sync v0.6.2 target="embassy_sync"}: cargo::core::compiler::fingerprint: fingerprint error for embassy-sync v0.6.2/Check { test: false }/TargetInner { ..: lib_target("embassy_sync", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\embassy-sync-0.6.2\\src\\lib.rs", Edition2021) }
+   0.799660200s  INFO prepare_target{force=false package_id=embassy-sync v0.6.2 target="embassy_sync"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\embassy-sync-2dbbeef6ddf5829b\lib-embassy_sync`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_odb_object_data
+  20: git_filter_source_repo
+  21: git_midx_writer_new
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.808305000s  INFO prepare_target{force=false package_id=esp-idf-hal v0.44.1 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-hal v0.44.1/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-hal-0.44.1\\build.rs", Edition2021) }
+   0.808345600s  INFO prepare_target{force=false package_id=esp-idf-hal v0.44.1 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\esp-idf-hal-d22558521f9a9aa8\run-build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_odb_object_data
+  22: git_filter_source_repo
+  23: git_midx_writer_new
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.808977400s  INFO prepare_target{force=false package_id=esp-idf-hal v0.44.1 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-hal v0.44.1/Build/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-hal-0.44.1\\build.rs", Edition2021) }
+   0.808998900s  INFO prepare_target{force=false package_id=esp-idf-hal v0.44.1 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\esp-idf-hal-ab316998bfbc6b74\build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_odb_object_data
+  21: git_filter_source_repo
+  22: git_midx_writer_new
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.809870300s  INFO prepare_target{force=false package_id=embuild v0.32.0 target="embuild"}: cargo::core::compiler::fingerprint: fingerprint error for embuild v0.32.0/Build/TargetInner { ..: lib_target("embuild", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\embuild-0.32.0\\src\\lib.rs", Edition2021) }
+   0.809893500s  INFO prepare_target{force=false package_id=embuild v0.32.0 target="embuild"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\embuild-aee7e19c5faf04a1\lib-embuild`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_odb_object_data
+  22: git_filter_source_repo
+  23: git_midx_writer_new
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.811958000s  INFO prepare_target{force=false package_id=bindgen v0.69.5 target="bindgen"}: cargo::core::compiler::fingerprint: fingerprint error for bindgen v0.69.5/Build/TargetInner { ..: lib_target("bindgen", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\bindgen-0.69.5\\lib.rs", Edition2018) }
+   0.811980300s  INFO prepare_target{force=false package_id=bindgen v0.69.5 target="bindgen"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\bindgen-a6bae474136d60e9\lib-bindgen`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_odb_object_data
+  23: git_filter_source_repo
+  24: git_midx_writer_new
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.819309200s  INFO prepare_target{force=false package_id=itertools v0.12.1 target="itertools"}: cargo::core::compiler::fingerprint: fingerprint error for itertools v0.12.1/Build/TargetInner { name_inferred: true, tested: false, benched: false, ..: lib_target("itertools", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\itertools-0.12.1\\src\\lib.rs", Edition2018) }
+   0.819336400s  INFO prepare_target{force=false package_id=itertools v0.12.1 target="itertools"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\itertools-b6742ae06431decf\lib-itertools`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_odb_object_data
+  24: git_filter_source_repo
+  25: git_midx_writer_new
+  26: BaseThreadInitThunk
+  27: RtlUserThreadStart
+   0.820806300s  INFO prepare_target{force=false package_id=prettyplease v0.2.37 target="prettyplease"}: cargo::core::compiler::fingerprint: fingerprint error for prettyplease v0.2.37/Build/TargetInner { ..: lib_target("prettyplease", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\prettyplease-0.2.37\\src\\lib.rs", Edition2021) }
+   0.820827900s  INFO prepare_target{force=false package_id=prettyplease v0.2.37 target="prettyplease"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\prettyplease-57dd3ad03563e751\lib-prettyplease`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_odb_object_data
+  24: git_filter_source_repo
+  25: git_midx_writer_new
+  26: BaseThreadInitThunk
+  27: RtlUserThreadStart
+   0.822705200s  INFO prepare_target{force=false package_id=which v4.4.2 target="which"}: cargo::core::compiler::fingerprint: fingerprint error for which v4.4.2/Build/TargetInner { name_inferred: true, ..: lib_target("which", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\which-4.4.2\\src\\lib.rs", Edition2021) }
+   0.822727200s  INFO prepare_target{force=false package_id=which v4.4.2 target="which"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\which-90a346aa191cfa92\lib-which`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_odb_object_data
+  24: git_filter_source_repo
+  25: git_midx_writer_new
+  26: BaseThreadInitThunk
+  27: RtlUserThreadStart
+   0.823264800s  INFO prepare_target{force=false package_id=home v0.5.9 target="home"}: cargo::core::compiler::fingerprint: fingerprint error for home v0.5.9/Build/TargetInner { name_inferred: true, ..: lib_target("home", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\home-0.5.9\\src\\lib.rs", Edition2021) }
+   0.823284200s  INFO prepare_target{force=false package_id=home v0.5.9 target="home"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\home-e62bcf0734fdbd1b\lib-home`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_path
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_filter_source_repo
+  24: git_odb_object_data
+  25: git_filter_source_repo
+  26: git_midx_writer_new
+  27: BaseThreadInitThunk
+  28: RtlUserThreadStart
+   0.823749100s  INFO prepare_target{force=false package_id=windows-sys v0.52.0 target="windows_sys"}: cargo::core::compiler::fingerprint: fingerprint error for windows-sys v0.52.0/Build/TargetInner { name_inferred: true, ..: lib_target("windows_sys", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\windows-sys-0.52.0\\src\\lib.rs", Edition2021) }
+   0.823767700s  INFO prepare_target{force=false package_id=windows-sys v0.52.0 target="windows_sys"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\windows-sys-e10a62ec7c4a5a0b\lib-windows_sys`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_path
+  18: git_filter_source_path
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_filter_source_repo
+  24: git_filter_source_repo
+  25: git_odb_object_data
+  26: git_filter_source_repo
+  27: git_midx_writer_new
+  28: BaseThreadInitThunk
+  29: RtlUserThreadStart
+   0.826171800s  INFO prepare_target{force=false package_id=rustix v0.38.44 target="rustix"}: cargo::core::compiler::fingerprint: fingerprint error for rustix v0.38.44/Build/TargetInner { ..: lib_target("rustix", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\rustix-0.38.44\\src\\lib.rs", Edition2021) }
+   0.826197400s  INFO prepare_target{force=false package_id=rustix v0.38.44 target="rustix"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\rustix-5a5b54d9ef0c22e3\lib-rustix`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_path
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_filter_source_repo
+  24: git_odb_object_data
+  25: git_filter_source_repo
+  26: git_midx_writer_new
+  27: BaseThreadInitThunk
+  28: RtlUserThreadStart
+   0.826718800s  INFO prepare_target{force=false package_id=errno v0.3.14 target="errno"}: cargo::core::compiler::fingerprint: fingerprint error for errno v0.3.14/Build/TargetInner { ..: lib_target("errno", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\errno-0.3.14\\src\\lib.rs", Edition2018) }
+   0.826738900s  INFO prepare_target{force=false package_id=errno v0.3.14 target="errno"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\errno-01e842e4ab12d926\lib-errno`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_path
+  18: git_filter_source_path
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_filter_source_repo
+  24: git_filter_source_repo
+  25: git_odb_object_data
+  26: git_filter_source_repo
+  27: git_midx_writer_new
+  28: BaseThreadInitThunk
+  29: RtlUserThreadStart
+   0.827228200s  INFO prepare_target{force=false package_id=windows-sys v0.61.2 target="windows_sys"}: cargo::core::compiler::fingerprint: fingerprint error for windows-sys v0.61.2/Build/TargetInner { tested: false, doctest: false, ..: lib_target("windows_sys", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\windows-sys-0.61.2\\src\\lib.rs", Edition2021) }
+   0.827247500s  INFO prepare_target{force=false package_id=windows-sys v0.61.2 target="windows_sys"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\windows-sys-f37c07271e324975\lib-windows_sys`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_path
+  18: git_filter_source_path
+  19: git_filter_source_path
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_filter_source_repo
+  24: git_filter_source_repo
+  25: git_filter_source_repo
+  26: git_odb_object_data
+  27: git_filter_source_repo
+  28: git_midx_writer_new
+  29: BaseThreadInitThunk
+  30: RtlUserThreadStart
+   0.832603500s  INFO prepare_target{force=false package_id=globwalk v0.8.1 target="globwalk"}: cargo::core::compiler::fingerprint: fingerprint error for globwalk v0.8.1/Build/TargetInner { name_inferred: true, ..: lib_target("globwalk", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\globwalk-0.8.1\\src\\lib.rs", Edition2015) }
+   0.832634600s  INFO prepare_target{force=false package_id=globwalk v0.8.1 target="globwalk"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\globwalk-b49d3c6781a8c210\lib-globwalk`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_odb_object_data
+  23: git_filter_source_repo
+  24: git_midx_writer_new
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.833161000s  INFO prepare_target{force=false package_id=ignore v0.4.25 target="ignore"}: cargo::core::compiler::fingerprint: fingerprint error for ignore v0.4.25/Build/TargetInner { benched: false, ..: lib_target("ignore", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\ignore-0.4.25\\src\\lib.rs", Edition2024) }
+   0.833183800s  INFO prepare_target{force=false package_id=ignore v0.4.25 target="ignore"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\ignore-c596cb3f36d8734c\lib-ignore`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_odb_object_data
+  24: git_filter_source_repo
+  25: git_midx_writer_new
+  26: BaseThreadInitThunk
+  27: RtlUserThreadStart
+   0.836194400s  INFO prepare_target{force=false package_id=same-file v1.0.6 target="same_file"}: cargo::core::compiler::fingerprint: fingerprint error for same-file v1.0.6/Build/TargetInner { name_inferred: true, ..: lib_target("same_file", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\same-file-1.0.6\\src\\lib.rs", Edition2018) }
+   0.836217400s  INFO prepare_target{force=false package_id=same-file v1.0.6 target="same_file"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\same-file-59490c9da36cfd9c\lib-same_file`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_path
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_filter_source_repo
+  24: git_odb_object_data
+  25: git_filter_source_repo
+  26: git_midx_writer_new
+  27: BaseThreadInitThunk
+  28: RtlUserThreadStart
+   0.836778100s  INFO prepare_target{force=false package_id=winapi-util v0.1.11 target="winapi_util"}: cargo::core::compiler::fingerprint: fingerprint error for winapi-util v0.1.11/Build/TargetInner { ..: lib_target("winapi_util", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\winapi-util-0.1.11\\src\\lib.rs", Edition2021) }
+   0.836800600s  INFO prepare_target{force=false package_id=winapi-util v0.1.11 target="winapi_util"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\winapi-util-6d5d219b756aa121\lib-winapi_util`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_path
+  18: git_filter_source_path
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_filter_source_repo
+  24: git_filter_source_repo
+  25: git_odb_object_data
+  26: git_filter_source_repo
+  27: git_midx_writer_new
+  28: BaseThreadInitThunk
+  29: RtlUserThreadStart
+   0.837269300s  INFO prepare_target{force=false package_id=walkdir v2.5.0 target="walkdir"}: cargo::core::compiler::fingerprint: fingerprint error for walkdir v2.5.0/Build/TargetInner { name_inferred: true, ..: lib_target("walkdir", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\walkdir-2.5.0\\src\\lib.rs", Edition2018) }
+   0.837284200s  INFO prepare_target{force=false package_id=walkdir v2.5.0 target="walkdir"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\walkdir-53eb2f3b4d015451\lib-walkdir`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_path
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_filter_source_repo
+  24: git_odb_object_data
+  25: git_filter_source_repo
+  26: git_midx_writer_new
+  27: BaseThreadInitThunk
+  28: RtlUserThreadStart
+   0.837756500s  INFO prepare_target{force=false package_id=remove_dir_all v0.8.4 target="remove_dir_all"}: cargo::core::compiler::fingerprint: fingerprint error for remove_dir_all v0.8.4/Build/TargetInner { ..: lib_target("remove_dir_all", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\remove_dir_all-0.8.4\\src\\lib.rs", Edition2018) }
+   0.837770400s  INFO prepare_target{force=false package_id=remove_dir_all v0.8.4 target="remove_dir_all"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\remove_dir_all-cd69831117e95870\lib-remove_dir_all`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_odb_object_data
+  23: git_filter_source_repo
+  24: git_midx_writer_new
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.838249700s  INFO prepare_target{force=false package_id=fs_at v0.2.1 target="fs_at"}: cargo::core::compiler::fingerprint: fingerprint error for fs_at v0.2.1/Build/TargetInner { name_inferred: true, ..: lib_target("fs_at", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\fs_at-0.2.1\\src\\lib.rs", Edition2021) }
+   0.838263500s  INFO prepare_target{force=false package_id=fs_at v0.2.1 target="fs_at"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\fs_at-b3778f8e556eb12c\lib-fs_at`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_odb_object_data
+  24: git_filter_source_repo
+  25: git_midx_writer_new
+  26: BaseThreadInitThunk
+  27: RtlUserThreadStart
+   0.839708500s  INFO prepare_target{force=false package_id=normpath v1.5.0 target="normpath"}: cargo::core::compiler::fingerprint: fingerprint error for normpath v1.5.0/Build/TargetInner { ..: lib_target("normpath", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\normpath-1.5.0\\src\\lib.rs", Edition2021) }
+   0.839724100s  INFO prepare_target{force=false package_id=normpath v1.5.0 target="normpath"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\normpath-cb06cf7ad7c08a02\lib-normpath`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_odb_object_data
+  24: git_filter_source_repo
+  25: git_midx_writer_new
+  26: BaseThreadInitThunk
+  27: RtlUserThreadStart
+   0.840209600s  INFO prepare_target{force=false package_id=serde v1.0.228 target="serde"}: cargo::core::compiler::fingerprint: fingerprint error for serde v1.0.228/Build/TargetInner { ..: lib_target("serde", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde-1.0.228\\src\\lib.rs", Edition2021) }
+   0.840224700s  INFO prepare_target{force=false package_id=serde v1.0.228 target="serde"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\serde-0aabe59eb596395a\lib-serde`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_odb_object_data
+  23: git_filter_source_repo
+  24: git_midx_writer_new
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.845339700s  INFO prepare_target{force=false package_id=strum v0.24.1 target="strum"}: cargo::core::compiler::fingerprint: fingerprint error for strum v0.24.1/Build/TargetInner { name_inferred: true, ..: lib_target("strum", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\strum-0.24.1\\src\\lib.rs", Edition2018) }
+   0.845381200s  INFO prepare_target{force=false package_id=strum v0.24.1 target="strum"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\strum-55cdb14225fe39f1\lib-strum`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_odb_object_data
+  23: git_filter_source_repo
+  24: git_midx_writer_new
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.846321500s  INFO prepare_target{force=false package_id=strum_macros v0.24.3 target="strum_macros"}: cargo::core::compiler::fingerprint: fingerprint error for strum_macros v0.24.3/Build/TargetInner { for_host: true, proc_macro: true, ..: lib_target("strum_macros", ["proc-macro"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\strum_macros-0.24.3\\src\\lib.rs", Edition2018) }
+   0.846343900s  INFO prepare_target{force=false package_id=strum_macros v0.24.3 target="strum_macros"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\strum_macros-ad94573275bb2c04\lib-strum_macros`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_odb_object_data
+  24: git_filter_source_repo
+  25: git_midx_writer_new
+  26: BaseThreadInitThunk
+  27: RtlUserThreadStart
+   0.847021100s  INFO prepare_target{force=false package_id=syn v1.0.109 target="syn"}: cargo::core::compiler::fingerprint: fingerprint error for syn v1.0.109/Build/TargetInner { name_inferred: true, doc_scrape_examples: Disabled, ..: lib_target("syn", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\syn-1.0.109\\src\\lib.rs", Edition2018) }
+   0.847044200s  INFO prepare_target{force=false package_id=syn v1.0.109 target="syn"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\syn-28b652c78bfa029b\lib-syn`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_path
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_filter_source_repo
+  24: git_odb_object_data
+  25: git_filter_source_repo
+  26: git_midx_writer_new
+  27: BaseThreadInitThunk
+  28: RtlUserThreadStart
+   0.848901200s  INFO prepare_target{force=false package_id=tempfile v3.23.0 target="tempfile"}: cargo::core::compiler::fingerprint: fingerprint error for tempfile v3.23.0/Build/TargetInner { ..: lib_target("tempfile", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\tempfile-3.23.0\\src\\lib.rs", Edition2021) }
+   0.848923900s  INFO prepare_target{force=false package_id=tempfile v3.23.0 target="tempfile"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\tempfile-819d781ca75ed711\lib-tempfile`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_odb_object_data
+  23: git_filter_source_repo
+  24: git_midx_writer_new
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.851059100s  INFO prepare_target{force=false package_id=thiserror v1.0.69 target="thiserror"}: cargo::core::compiler::fingerprint: fingerprint error for thiserror v1.0.69/Build/TargetInner { ..: lib_target("thiserror", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\thiserror-1.0.69\\src\\lib.rs", Edition2021) }
+   0.851084700s  INFO prepare_target{force=false package_id=thiserror v1.0.69 target="thiserror"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\thiserror-aa8b19670d5febb1\lib-thiserror`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_odb_object_data
+  23: git_filter_source_repo
+  24: git_midx_writer_new
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.852775100s  INFO prepare_target{force=false package_id=thiserror-impl v1.0.69 target="thiserror_impl"}: cargo::core::compiler::fingerprint: fingerprint error for thiserror-impl v1.0.69/Build/TargetInner { for_host: true, proc_macro: true, ..: lib_target("thiserror_impl", ["proc-macro"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\thiserror-impl-1.0.69\\src\\lib.rs", Edition2021) }
+   0.852795700s  INFO prepare_target{force=false package_id=thiserror-impl v1.0.69 target="thiserror_impl"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\thiserror-impl-2f21d0ed20f8c391\lib-thiserror_impl`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_odb_object_data
+  24: git_filter_source_repo
+  25: git_midx_writer_new
+  26: BaseThreadInitThunk
+  27: RtlUserThreadStart
+   0.853870800s  INFO prepare_target{force=false package_id=esp-idf-sys v0.35.0 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-sys v0.35.0/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-sys-0.35.0\\build\\build.rs", Edition2021) }
+   0.853890000s  INFO prepare_target{force=false package_id=esp-idf-sys v0.35.0 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\esp-idf-sys-f04b869d3033a91a\run-build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_odb_object_data
+  23: git_filter_source_repo
+  24: git_midx_writer_new
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.854318800s  INFO prepare_target{force=false package_id=esp-idf-sys v0.35.0 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-sys v0.35.0/Build/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-sys-0.35.0\\build\\build.rs", Edition2021) }
+   0.854335600s  INFO prepare_target{force=false package_id=esp-idf-sys v0.35.0 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\esp-idf-sys-c7e83004fef67703\build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_odb_object_data
+  22: git_filter_source_repo
+  23: git_midx_writer_new
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.854932700s  INFO prepare_target{force=false package_id=cargo_metadata v0.18.1 target="cargo_metadata"}: cargo::core::compiler::fingerprint: fingerprint error for cargo_metadata v0.18.1/Build/TargetInner { name_inferred: true, ..: lib_target("cargo_metadata", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\cargo_metadata-0.18.1\\src\\lib.rs", Edition2018) }
+   0.854953000s  INFO prepare_target{force=false package_id=cargo_metadata v0.18.1 target="cargo_metadata"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\cargo_metadata-3f02124c54d2ab60\lib-cargo_metadata`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_odb_object_data
+  23: git_filter_source_repo
+  24: git_midx_writer_new
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.856930900s  INFO prepare_target{force=false package_id=cargo-platform v0.1.9 target="cargo_platform"}: cargo::core::compiler::fingerprint: fingerprint error for cargo-platform v0.1.9/Build/TargetInner { ..: lib_target("cargo_platform", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\cargo-platform-0.1.9\\src\\lib.rs", Edition2021) }
+   0.856953400s  INFO prepare_target{force=false package_id=cargo-platform v0.1.9 target="cargo_platform"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\cargo-platform-3361d8e6cb8ec6b4\lib-cargo_platform`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_odb_object_data
+  24: git_filter_source_repo
+  25: git_midx_writer_new
+  26: BaseThreadInitThunk
+  27: RtlUserThreadStart
+   0.857723400s  INFO prepare_target{force=false package_id=envy v0.4.2 target="envy"}: cargo::core::compiler::fingerprint: fingerprint error for envy v0.4.2/Build/TargetInner { name_inferred: true, ..: lib_target("envy", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\envy-0.4.2\\src\\lib.rs", Edition2018) }
+   0.857742500s  INFO prepare_target{force=false package_id=envy v0.4.2 target="envy"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\envy-86c4c6fd8ea27860\lib-envy`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_odb_object_data
+  23: git_filter_source_repo
+  24: git_midx_writer_new
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.858215300s  INFO prepare_target{force=false package_id=esp-idf-sys v0.35.0 target="esp_idf_sys"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-sys v0.35.0/Check { test: false }/TargetInner { ..: lib_target("esp_idf_sys", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-sys-0.35.0\\src\\lib.rs", Edition2021) }
+   0.858234800s  INFO prepare_target{force=false package_id=esp-idf-sys v0.35.0 target="esp_idf_sys"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\esp-idf-sys-f5575fa56f7ba4ca\lib-esp_idf_sys`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_odb_object_data
+  20: git_filter_source_repo
+  21: git_midx_writer_new
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.858792300s  INFO prepare_target{force=false package_id=build-time v0.1.3 target="build_time"}: cargo::core::compiler::fingerprint: fingerprint error for build-time v0.1.3/Build/TargetInner { name_inferred: true, for_host: true, proc_macro: true, ..: lib_target("build_time", ["proc-macro"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\build-time-0.1.3\\src\\lib.rs", Edition2018) }
+   0.858810900s  INFO prepare_target{force=false package_id=build-time v0.1.3 target="build_time"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\build-time-64f9d0efabc6b3b2\lib-build_time`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_odb_object_data
+  21: git_filter_source_repo
+  22: git_midx_writer_new
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.862997400s  INFO prepare_target{force=false package_id=esp-idf-svc v0.49.1 target="esp_idf_svc"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-svc v0.49.1/Check { test: false }/TargetInner { harness: false, ..: lib_target("esp_idf_svc", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-svc-0.49.1\\src\\lib.rs", Edition2021) }
+   0.863023200s  INFO prepare_target{force=false package_id=esp-idf-svc v0.49.1 target="esp_idf_svc"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\esp-idf-svc-430ea83946ca353b\lib-esp_idf_svc`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_odb_object_data
+  19: git_filter_source_repo
+  20: git_midx_writer_new
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.863861500s  INFO prepare_target{force=false package_id=embedded-svc v0.28.1 target="embedded_svc"}: cargo::core::compiler::fingerprint: fingerprint error for embedded-svc v0.28.1/Check { test: false }/TargetInner { ..: lib_target("embedded_svc", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\embedded-svc-0.28.1\\src\\lib.rs", Edition2021) }
+   0.863882200s  INFO prepare_target{force=false package_id=embedded-svc v0.28.1 target="embedded_svc"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\embedded-svc-3c7b6dab271d8208\lib-embedded_svc`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_odb_object_data
+  20: git_filter_source_repo
+  21: git_midx_writer_new
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.865028800s  INFO prepare_target{force=false package_id=esp-idf-svc v0.49.1 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-svc v0.49.1/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-svc-0.49.1\\build.rs", Edition2021) }
+   0.865046900s  INFO prepare_target{force=false package_id=esp-idf-svc v0.49.1 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\esp-idf-svc-a98e7ac7694167b2\run-build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_odb_object_data
+  22: git_filter_source_repo
+  23: git_midx_writer_new
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.865429600s  INFO prepare_target{force=false package_id=esp-idf-svc v0.49.1 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-svc v0.49.1/Build/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-svc-0.49.1\\build.rs", Edition2021) }
+   0.865446100s  INFO prepare_target{force=false package_id=esp-idf-svc v0.49.1 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\esp-idf-svc-07c8e02ad8181ba9\build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_odb_object_data
+  21: git_filter_source_repo
+  22: git_midx_writer_new
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.867794800s  INFO prepare_target{force=false package_id=lora-phy v3.0.1 target="lora_phy"}: cargo::core::compiler::fingerprint: fingerprint error for lora-phy v3.0.1/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("lora_phy", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\lora-phy-3.0.1\\src\\lib.rs", Edition2021) }
+   0.867821200s  INFO prepare_target{force=false package_id=lora-phy v3.0.1 target="lora_phy"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\lora-phy-ea4feff2a621c0fb\lib-lora_phy`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_odb_object_data
+  19: git_filter_source_repo
+  20: git_midx_writer_new
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.868406800s  INFO prepare_target{force=false package_id=defmt v0.3.100 target="defmt"}: cargo::core::compiler::fingerprint: fingerprint error for defmt v0.3.100/Check { test: false }/TargetInner { ..: lib_target("defmt", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\defmt-0.3.100\\src\\lib.rs", Edition2021) }
+   0.868426000s  INFO prepare_target{force=false package_id=defmt v0.3.100 target="defmt"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\defmt-dc7b02c8be846670\lib-defmt`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_odb_object_data
+  20: git_filter_source_repo
+  21: git_midx_writer_new
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.869033100s  INFO prepare_target{force=false package_id=defmt v1.0.1 target="defmt"}: cargo::core::compiler::fingerprint: fingerprint error for defmt v1.0.1/Check { test: false }/TargetInner { ..: lib_target("defmt", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\defmt-1.0.1\\src\\lib.rs", Edition2021) }
+   0.869051600s  INFO prepare_target{force=false package_id=defmt v1.0.1 target="defmt"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\defmt-d277e5e3996a1458\lib-defmt`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_odb_object_data
+  21: git_filter_source_repo
+  22: git_midx_writer_new
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.871000900s  INFO prepare_target{force=false package_id=defmt-macros v1.0.1 target="defmt_macros"}: cargo::core::compiler::fingerprint: fingerprint error for defmt-macros v1.0.1/Build/TargetInner { for_host: true, proc_macro: true, ..: lib_target("defmt_macros", ["proc-macro"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\defmt-macros-1.0.1\\src\\lib.rs", Edition2021) }
+   0.871022100s  INFO prepare_target{force=false package_id=defmt-macros v1.0.1 target="defmt_macros"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\defmt-macros-ac1c0ddf4b44416a\lib-defmt_macros`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_odb_object_data
+  22: git_filter_source_repo
+  23: git_midx_writer_new
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.872681800s  INFO prepare_target{force=false package_id=defmt-parser v1.0.0 target="defmt_parser"}: cargo::core::compiler::fingerprint: fingerprint error for defmt-parser v1.0.0/Build/TargetInner { ..: lib_target("defmt_parser", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\defmt-parser-1.0.0\\src\\lib.rs", Edition2021) }
+   0.872704200s  INFO prepare_target{force=false package_id=defmt-parser v1.0.0 target="defmt_parser"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\defmt-parser-2d64b758708d55db\lib-defmt_parser`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_odb_object_data
+  23: git_filter_source_repo
+  24: git_midx_writer_new
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.873247000s  INFO prepare_target{force=false package_id=thiserror v2.0.17 target="thiserror"}: cargo::core::compiler::fingerprint: fingerprint error for thiserror v2.0.17/Build/TargetInner { ..: lib_target("thiserror", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\thiserror-2.0.17\\src\\lib.rs", Edition2021) }
+   0.873268700s  INFO prepare_target{force=false package_id=thiserror v2.0.17 target="thiserror"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\thiserror-284fed18dd51e566\lib-thiserror`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_odb_object_data
+  24: git_filter_source_repo
+  25: git_midx_writer_new
+  26: BaseThreadInitThunk
+  27: RtlUserThreadStart
+   0.874952300s  INFO prepare_target{force=false package_id=thiserror-impl v2.0.17 target="thiserror_impl"}: cargo::core::compiler::fingerprint: fingerprint error for thiserror-impl v2.0.17/Build/TargetInner { for_host: true, proc_macro: true, ..: lib_target("thiserror_impl", ["proc-macro"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\thiserror-impl-2.0.17\\src\\lib.rs", Edition2021) }
+   0.874977100s  INFO prepare_target{force=false package_id=thiserror-impl v2.0.17 target="thiserror_impl"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\thiserror-impl-e176190265331e0c\lib-thiserror_impl`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_path
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_filter_source_repo
+  23: git_filter_source_repo
+  24: git_odb_object_data
+  25: git_filter_source_repo
+  26: git_midx_writer_new
+  27: BaseThreadInitThunk
+  28: RtlUserThreadStart
+   0.875510200s  INFO prepare_target{force=false package_id=proc-macro-error2 v2.0.1 target="proc_macro_error2"}: cargo::core::compiler::fingerprint: fingerprint error for proc-macro-error2 v2.0.1/Build/TargetInner { ..: lib_target("proc_macro_error2", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\proc-macro-error2-2.0.1\\src\\lib.rs", Edition2021) }
+   0.875529500s  INFO prepare_target{force=false package_id=proc-macro-error2 v2.0.1 target="proc_macro_error2"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\proc-macro-error2-a670a7d6e4bc4c01\lib-proc_macro_error2`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: git_odb_object_data
+  23: git_filter_source_repo
+  24: git_midx_writer_new
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.876298600s  INFO prepare_target{force=false package_id=lora-modulation v0.1.5 target="lora_modulation"}: cargo::core::compiler::fingerprint: fingerprint error for lora-modulation v0.1.5/Check { test: false }/TargetInner { ..: lib_target("lora_modulation", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\lora-modulation-0.1.5\\src\\lib.rs", Edition2021) }
+   0.876318100s  INFO prepare_target{force=false package_id=lora-modulation v0.1.5 target="lora_modulation"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\lora-modulation-a96e8950745bd62c\lib-lora_modulation`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_odb_object_data
+  20: git_filter_source_repo
+  21: git_midx_writer_new
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.876926400s  INFO prepare_target{force=false package_id=lorawan-device v0.12.2 target="lorawan_device"}: cargo::core::compiler::fingerprint: fingerprint error for lorawan-device v0.12.2/Check { test: false }/TargetInner { ..: lib_target("lorawan_device", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\lorawan-device-0.12.2\\src\\lib.rs", Edition2021) }
+   0.876946500s  INFO prepare_target{force=false package_id=lorawan-device v0.12.2 target="lorawan_device"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\lorawan-device-8f4e75143fba0b52\lib-lorawan_device`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_odb_object_data
+  20: git_filter_source_repo
+  21: git_midx_writer_new
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.884516600s  INFO prepare_target{force=false package_id=lorawan v0.9.0 target="lorawan"}: cargo::core::compiler::fingerprint: fingerprint error for lorawan v0.9.0/Check { test: false }/TargetInner { ..: lib_target("lorawan", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\lorawan-0.9.0\\src\\lib.rs", Edition2021) }
+   0.884542600s  INFO prepare_target{force=false package_id=lorawan v0.9.0 target="lorawan"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\lorawan-b5ae03c51d91105d\lib-lorawan`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_odb_object_data
+  21: git_filter_source_repo
+  22: git_midx_writer_new
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.888546900s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for tugger-device v0.1.0 (D:\AntigravityProjects\Tugr)/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "D:\\AntigravityProjects\\Tugr\\build.rs", Edition2021) }
+   0.888570000s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\tugger-device-b2643a8a42eb7930\run-build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_odb_object_data
+  21: git_filter_source_repo
+  22: git_midx_writer_new
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.888984500s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for tugger-device v0.1.0 (D:\AntigravityProjects\Tugr)/Build/TargetInner { ..: custom_build_target("build-script-build", "D:\\AntigravityProjects\\Tugr\\build.rs", Edition2021) }
+   0.888998700s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\tugger-device-1786e7103bd753fe\build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_odb_object_data
+  20: git_filter_source_repo
+  21: git_midx_writer_new
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.889476900s  INFO prepare_target{force=false package_id=embuild v0.31.4 target="embuild"}: cargo::core::compiler::fingerprint: fingerprint error for embuild v0.31.4/Build/TargetInner { name_inferred: true, ..: lib_target("embuild", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\embuild-0.31.4\\src\\lib.rs", Edition2021) }
+   0.889503200s  INFO prepare_target{force=false package_id=embuild v0.31.4 target="embuild"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\debug\.fingerprint\embuild-e599d2541bb15e61\lib-embuild`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_odb_object_data
+  21: git_filter_source_repo
+  22: git_midx_writer_new
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.890182300s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="tugger-device"}: cargo::core::compiler::fingerprint: fingerprint error for tugger-device v0.1.0 (D:\AntigravityProjects\Tugr)/Check { test: true }/TargetInner { name: "tugger-device", doc: true, ..: with_path("D:\\AntigravityProjects\\Tugr\\src\\main.rs", Edition2021) }
+   0.890201100s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="tugger-device"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\tugger-device-8597caec241e2990\test-bin-tugger-device`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_odb_object_data
+   1: git_odb_object_data
+   2: git_filter_source_path
+   3: git_filter_source_path
+   4: git_filter_source_path
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_odb_object_data
+  18: git_filter_source_repo
+  19: git_midx_writer_new
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   Compiling windows-sys v0.61.2
+   Compiling syn v2.0.111
+   Compiling windows-sys v0.52.0
+   Compiling syn v1.0.109
+   Compiling itertools v0.12.1
+   Compiling winapi-util v0.1.11
+   Compiling errno v0.3.14
+   Compiling normpath v1.5.0
+   Compiling tempfile v3.23.0
+   Compiling rustix v0.38.44
+   Compiling same-file v1.0.6
+   Compiling walkdir v2.5.0
+   Compiling ignore v0.4.25
+   Compiling globwalk v0.8.1
+   Compiling strum_macros v0.24.3
+   Compiling prettyplease v0.2.37
+   Compiling darling_core v0.21.3
+   Compiling proc-macro-error2 v2.0.1
+   Compiling home v0.5.9
+   Compiling fs_at v0.2.1
+   Compiling which v4.4.2
+   Compiling remove_dir_all v0.8.4
+   Compiling bindgen v0.69.5
+   Compiling serde_derive v1.0.228
+   Compiling thiserror-impl v1.0.69
+   Compiling thiserror-impl v2.0.17
+   Compiling num_enum_derive v0.7.5
+   Compiling build-time v0.1.3
