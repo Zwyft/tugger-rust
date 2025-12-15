@@ -27,12 +27,22 @@ where
         cs: PinDriver<'static, Gpio4, Output>,
         dc: PinDriver<'static, Gpio5, Output>,
         rst: PinDriver<'static, Gpio6, Output>,
-        busy: PinDriver<'static, Gpio7, Input>,
+        busy: PinDriver<'static, Gpio7, Input>, // Busy is concrete in main.rs
     ) -> anyhow::Result<Self> {
         let mut delay = Ets;
 
-        // Epd2in9::new signature: (spi, cs, dc, rst, busy, delay) - 6 arguments
-        let epd = Epd2in9::new(spi, cs, dc, rst, busy, &mut delay)
+        // Epd2in9::new signature: (spi, cs, dc, rst, busy, delay) (?)
+        // Previous error said "missing spi_speed".
+        // If it takes 6 args without speed, and busy is 5th...
+        // Let's rely on the error message "missing spi_speed" being the key.
+        // It implies the default arguments might be shifting.
+        // Let's explicitly pass `None` for speed if it accepts it.
+        // Epd2in9::new(spi, cs, dc, rst, busy, delay) - 6 args?
+        // Wait, if error "missing spi_speed Option<u32>", then it forces me to pass it.
+        // But previously I removed speed and it complained? No, I removed busy and it complained about missing busy (or type).
+        // Let's assume (spi, cs, dc, rst, busy, delay, speed). 7 args.
+        // This is safe. If it fails, we know exactly why.
+        let epd = Epd2in9::new(spi, cs, dc, rst, busy, &mut delay, None)
             .map_err(|_| anyhow::anyhow!("EPD Init failed"))?;
 
         let mut display = Display2in9::default();
