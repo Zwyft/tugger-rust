@@ -37,6 +37,23 @@ fn main() {
     println!("cargo:rustc-check-cfg=cfg(esp_idf_eth_use_openeth)");
     println!("cargo:rustc-check-cfg=cfg(esp_idf_version)");
     println!("cargo:rustc-check-cfg=cfg(esp_idf_version_major, values(\"4\", \"5\"))");
-    println!("cargo:rustc-check-cfg=cfg(esp_idf_version_minor, values(\"0\", \"1\", \"3\"))");
-    println!("cargo:rustc-check-cfg=cfg(esp_idf_version_patch, values(\"0\", \"1\"))");
+    println!(
+        "cargo:rustc-check-cfg=cfg(esp_idf_version_minor, values(\"0\", \"1\", \"3\", \"4\"))"
+    );
+    println!(
+        "cargo:rustc-check-cfg=cfg(esp_idf_version_patch, values(\"0\", \"1\", \"2\", \"3\"))"
+    );
+    println!("cargo:rustc-check-cfg=cfg(esp_idf_version_full)");
+
+    println!("cargo:rustc-check-cfg=cfg(esp_idf_lwip_ppp_support)");
+    println!("cargo:rustc-check-cfg=cfg(esp_idf_lwip_slip_support)");
+    println!("cargo:rustc-check-cfg=cfg(esp_idf_esp_timer_supports_isr_dispatch_method)");
+    println!("cargo:rustc-check-cfg=cfg(esp_idf_comp_esp_tls_enabled)");
+    println!("cargo:rustc-check-cfg=cfg(esp_idf_esp_tls_using_mbedtls)");
+    println!("cargo:rustc-check-cfg=cfg(esp_idf_esp_tls_using_wolfssl)");
+    println!("cargo:rustc-check-cfg=cfg(esp_idf_mbedtls_certificate_bundle)");
+    println!("cargo:rustc-check-cfg=cfg(esp_idf_comp_lwip_enabled)");
+    println!("cargo:rustc-check-cfg=cfg(esp_idf_comp_tcp_transport_enabled)");
+    println!("cargo:rustc-check-cfg=cfg(esp_idf_ws_transport)");
+    println!("cargo:rustc-check-cfg=cfg(esp_idf_comp_espressif__esp_websocket_client_enabled)");
 }

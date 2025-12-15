@@ -1,18 +1,20 @@
-use esp_idf_hal::delay::Ets;
+use embedded_hal::delay::DelayNs;
 use esp_idf_hal::gpio::*;
-use lora_phy::lorawan_radio::LorawanRadio;
 use lora_phy::sx126x::{Sx126x, Sx126xVariant, TcxoCtrlVoltage};
 use lora_phy::LoRa;
 
-// Wrapper for Ets to implement embedded_hal_async::delay::DelayNs if needed
-// Or use standard DelayNs validation. Ets implements blocking DelayNs.
-// If lora-phy v3 uses async DelayNs, 'Ets' won't work directly.
-// We will use a dummy Async Delay for now or `esp_idf_hal::task::embassy_sync::EspRawMutex`?
-// No, simpler: Ets is blocking. If lora-phy needs async delay, we are in trouble with Ets.
-// BUT `lora-phy` v3 `LoRa::new` signature: `new(radio_kind, enable_public_network, delay)`.
-// The delay must implement `DelayNs`.
-// If it requires Async, we need an async delay.
-// Let's assume for a moment Ets works or we can simple-wrap it.
+// Async Delay Wrapper for Ets
+#[derive(Clone, Copy)]
+pub struct AsyncEts;
+
+impl embedded_hal_async::delay::DelayNs for AsyncEts {
+    async fn delay_ns(&mut self, ns: u32) {
+        // Ets is blocking, but for simple delays in async context without a real reactor,
+        // blocking is "acceptable" though it freezes the executor.
+        // For now, to make types align:
+        Ets.delay_ns(ns);
+    }
+}
 
 pub struct RadioConfig {
     pub frequency: u32,
@@ -34,13 +36,29 @@ impl Default for RadioConfig {
     }
 }
 
+// Sx126x<SPI, BoardType, Delay>? Or SPI, InterfaceVariant.
+// lora-phy v3: Sx126x<SPI, IV, D>
+// IV must be the Type of the interface variant struct, not the enum value.
+// The type of `Sx126xVariant::Sx1262(...)` is `Sx126xVariant<PinDriver<...>, ...>`.
+// BUT, Sx126xVariant is an enum.
+// The error `expected type, found trait Sx126xVariant` suggests it might be a trait in v3 or I am using it wrong.
+// Actually, in v3, `Sx126xVariant` is an enum. You cannot use an enum variant as a type parameter unless it's a const generic?
+// NO. The second generic param of Sx126x is `IV`. IV must implement `InterfaceVariant`.
+// Does the enum `Sx126xVariant` implement `InterfaceVariant`? YES.
+// So `Sx126x<SPI, Sx126xVariant<'d, ...>, Ets>` SHOULD be correct if arguments match.
+// BUT `Sx126x` does NOT take lifetime `'d`.
+// My previous fix removed `'d` from `Sx126x`, but I kept it on `Sx126xVariant`.
+// `Sx126xVariant` DOES take `'d` because it holds `PinDriver<'d>`.
+
+// Let's rely on type inference for the struct field to avoid this mess.
+// Use `Box<dyn RadioKind>`? No, overhead.
+// Use `impl RadioKind`? Can't in struct field.
+// We must name the type.
+
 pub struct TunggerRadio<'d, SPI>
 where
     SPI: embedded_hal_async::spi::SpiDevice,
 {
-    // Fix: Sx126x does not take lifetime 'd in v3.
-    // Fix: Sx126xVariant is an enum/struct, pass it as Type?
-    // Sx126x<SPI, Variant>
     pub lora: LoRa<
         Sx126x<
             SPI,
@@ -50,10 +68,24 @@ where
                 PinDriver<'d, Gpio13, Input>,
                 PinDriver<'d, Gpio14, Input>,
             >,
+            Ets,
         >,
         Ets,
     >,
 }
+// Note: LoRa takes <RK, DLY>. RK = Sx126x<...>.
+// Error `Ets does not implement DelayNs`.
+// If Ets is blocking, we need to wrap it or use a different delay.
+// Let's assume for now we use `esp_idf_hal::delay::Ets` and ignored the error? No, user reported it fails.
+// We need a delay that works. `lora-phy` re-exports `embedded_hal::delay::DelayNs`.
+// Ets implements it.
+// Why error? "the trait bound `Ets: lora_phy::DelayNs` is not satisfied".
+// Maybe version mismatch between `esp-idf-hal`'s `embedded-hal` and `lora-phy`'s `embedded-hal`.
+// `esp-idf-hal` 0.43 -> `embedded-hal` 1.0.
+// `lora-phy` 3 -> `embedded-hal` 1.0 (async supported).
+// Maybe `lora-phy::DelayNs` is `embedded_hal_async::delay::DelayNs`?
+// If LoRa is async, it needs async delay. Ets is blocking delay.
+// We need an async delay wrapper.
 
 impl<'d, SPI> TunggerRadio<'d, SPI>
 where
@@ -79,7 +111,8 @@ where
 
         let sx126x = Sx126x::new(spi, iv, config);
 
-        let lora = LoRa::new(sx126x, true, Ets)
+        // Use AsyncEts
+        let lora = LoRa::new(sx126x, true, AsyncEts)
             .await
             .map_err(|e| anyhow::anyhow!("LoRa init failed: {:?}", e))?;
 

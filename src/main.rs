@@ -1,4 +1,6 @@
 use embedded_hal_bus::spi::MutexDevice;
+// embedded-hal-bus 0.1 location:
+use embedded_hal_bus::spi::MutexDevice;
 use esp_idf_hal::prelude::*;
 use esp_idf_hal::task::block_on;
 use esp_idf_svc::hal as esp_idf_hal;
