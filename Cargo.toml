@@ -27,7 +27,7 @@ display-interface = "0.4"
 display-interface-spi = "0.5"
 
 [build-dependencies]
-embuild = "0.31"
+embuild = { version = "0.31", features = ["espidf"] }
 
 # [patch.crates-io]
 # esp-idf-svc = { path = "patches/esp-idf-svc" }
