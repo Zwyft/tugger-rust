@@ -31,3 +31,43 @@ embuild = "0.31"
 
 [patch.crates-io]
 esp-idf-svc = { path = "patches/esp-idf-svc" }
+
+[lints.rust]
+unexpected_cfgs = { level = "allow", check-cfg = [
+    'cfg(esp32)',
+    'cfg(esp32s2)',
+    'cfg(esp32s3)',
+    'cfg(esp32c3)',
+    'cfg(esp32h2)',
+    'cfg(esp_idf_bt_enabled)',
+    'cfg(esp_idf_bt_bluedroid_enabled)',
+    'cfg(esp_idf_comp_esp_wifi_enabled)',
+    'cfg(esp_idf_comp_esp_event_enabled)',
+    'cfg(esp_idf_comp_esp_eth_enabled)',
+    'cfg(esp_idf_comp_mdns_enabled)',
+    'cfg(esp_idf_comp_espressif__mdns_enabled)',
+    'cfg(esp_idf_comp_mqtt_enabled)',
+    'cfg(esp_idf_lwip_ipv4_napt)',
+    'cfg(esp_idf_comp_esp_netif_enabled)',
+    'cfg(esp_idf_comp_nvs_flash_enabled)',
+    'cfg(esp_idf_comp_app_update_enabled)',
+    'cfg(esp_idf_comp_spi_flash_enabled)',
+    'cfg(esp_idf_comp_esp_timer_enabled)',
+    'cfg(esp_idf_comp_vfs_enabled)',
+    'cfg(esp_idf_comp_esp_http_client_enabled)',
+    'cfg(esp_idf_comp_esp_http_server_enabled)',
+    'cfg(esp_idf_esp_https_server_enable)',
+    'cfg(esp_idf_httpd_ws_support)',
+    'cfg(esp_idf_esp_event_post_from_isr)',
+    'cfg(esp_idf_esp_tls_psk_verification)',
+    'cfg(esp_idf_log_colors)',
+    'cfg(esp_idf_eth_use_esp32_emac)',
+    'cfg(esp_idf_eth_spi_ethernet_dm9051)',
+    'cfg(esp_idf_eth_spi_ethernet_w5500)',
+    'cfg(esp_idf_eth_spi_ethernet_ksz8851snl)',
+    'cfg(esp_idf_eth_use_openeth)',
+    'cfg(esp_idf_version)',
+    'cfg(esp_idf_version_major)',
+    'cfg(esp_idf_version_minor)',
+    'cfg(esp_idf_version_patch)',
+] }
