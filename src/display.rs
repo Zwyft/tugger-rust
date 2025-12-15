@@ -40,7 +40,7 @@ where
         Ok(Self { epd, display })
     }
 
-    pub fn update(&mut self, spi: &mut SPI, text: &str) -> anyhow::Result<()> {
+    pub fn update(&mut self, spi: &mut SPI, _text: &str) -> anyhow::Result<()> {
         let mut delay = Ets;
         self.display.clear(epd_waveshare::color::Color::White).ok();
 

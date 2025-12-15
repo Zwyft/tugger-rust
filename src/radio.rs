@@ -1,7 +1,7 @@
 use esp_idf_hal::delay::Ets;
 use esp_idf_hal::gpio::*;
 use lora_phy::lorawan_radio::LorawanRadio;
-use lora_phy::sx126x::{Sx126x, Sx126xVariant};
+use lora_phy::sx126x::{Sx126x, Sx126xVariant, TcxoCtrlVoltage};
 use lora_phy::LoRa;
 
 pub struct RadioConfig {
@@ -24,15 +24,22 @@ impl Default for RadioConfig {
     }
 }
 
-pub struct TunggerRadio<'d, SPI> {
+pub struct TunggerRadio<'d, SPI>
+where
+    SPI: embedded_hal_async::spi::SpiDevice,
+{
+    // lora-phy v3.x type definition
     pub lora: LoRa<
         Sx126x<
             'd,
             SPI,
-            PinDriver<'d, Gpio8, Output>,
-            PinDriver<'d, Gpio12, Output>,
-            PinDriver<'d, Gpio13, Input>,
-            PinDriver<'d, Gpio14, Input>,
+            Sx126xVariant<
+                'd,
+                PinDriver<'d, Gpio8, Output>,
+                PinDriver<'d, Gpio12, Output>,
+                PinDriver<'d, Gpio13, Input>,
+                PinDriver<'d, Gpio14, Input>,
+            >,
         >,
         Ets,
     >,
@@ -40,29 +47,39 @@ pub struct TunggerRadio<'d, SPI> {
 
 impl<'d, SPI> TunggerRadio<'d, SPI>
 where
-    SPI: embedded_hal::spi::SpiDevice,
+    SPI: embedded_hal_async::spi::SpiDevice,
 {
-    pub fn new(
+    pub async fn new(
         spi: SPI,
         nss: PinDriver<'d, Gpio8, Output>,
         rst: PinDriver<'d, Gpio12, Output>,
         busy: PinDriver<'d, Gpio13, Input>,
         dio1: PinDriver<'d, Gpio14, Input>,
     ) -> anyhow::Result<Self> {
-        let sx126x = Sx126x::new(nss, rst, busy, spi, Ets);
+        let iv = Sx126xVariant::Sx1262(nss, rst, busy, dio1);
+
+        // config is `lora_phy::sx126x::Config`
+        let config = lora_phy::sx126x::Config {
+            tcxo_ctrl: Some(TcxoCtrlVoltage::Ctrl1V7),
+            use_dcdc: true,
+            use_dio2_as_rf_switch: true,
+        };
+
+        let sx126x = Sx126x::new(spi, iv, config);
 
         let lora = LoRa::new(sx126x, true, Ets)
+            .await
             .map_err(|e| anyhow::anyhow!("LoRa init failed: {:?}", e))?;
 
         Ok(Self { lora })
     }
 
-    pub fn configure(&mut self, cfg: &RadioConfig) -> anyhow::Result<()> {
+    pub async fn configure(&mut self, cfg: &RadioConfig) -> anyhow::Result<()> {
         let mdltn_params = self
             .lora
             .create_modulation_params(
                 lora_phy::mod_params::SpreadingFactor::_9,
-                lora_phy::mod_params::Bandwidth::_125KHZ,
+                lora_phy::mod_params::Bandwidth::_125KHz, // Fixed Case
                 lora_phy::mod_params::CodingRate::_4_7,
                 cfg.frequency,
             )
@@ -75,16 +92,17 @@ where
 
         self.lora
             .enter_standby()
+            .await
             .map_err(|e| anyhow::anyhow!("Standby error: {:?}", e))?;
         Ok(())
     }
 
-    pub fn transmit(&mut self, data: &[u8]) -> anyhow::Result<()> {
+    pub async fn transmit(&mut self, data: &[u8]) -> anyhow::Result<()> {
         let mdltn_params = self
             .lora
             .create_modulation_params(
                 lora_phy::mod_params::SpreadingFactor::_9,
-                lora_phy::mod_params::Bandwidth::_125KHZ,
+                lora_phy::mod_params::Bandwidth::_125KHz,
                 lora_phy::mod_params::CodingRate::_4_7,
                 915_000_000,
             )
@@ -92,6 +110,7 @@ where
 
         self.lora
             .prepare_for_tx(&mdltn_params, 14, false)
+            .await
             .map_err(|e| anyhow::anyhow!("PrepareTx error: {:?}", e))?;
 
         self.lora
@@ -104,6 +123,7 @@ where
                 data,
                 0xFFFFFF,
             )
+            .await
             .map_err(|e| anyhow::anyhow!("TX error: {:?}", e))?;
 
         Ok(())
