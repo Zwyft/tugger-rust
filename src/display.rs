@@ -31,8 +31,8 @@ where
     ) -> anyhow::Result<Self> {
         let mut delay = Ets;
 
-        // Epd2in9::new signature: (spi, cs, busy, dc, rst, delay)
-        let epd = Epd2in9::new(spi, cs, busy, dc, rst, &mut delay)
+        // Epd2in9::new signature: (spi, cs, dc, rst, busy, delay, speed)
+        let epd = Epd2in9::new(spi, cs, dc, rst, busy, &mut delay, None)
             .map_err(|_| anyhow::anyhow!("EPD Init failed"))?;
 
         let mut display = Display2in9::default();

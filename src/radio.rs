@@ -89,21 +89,16 @@ where
         busy: PinDriver<'d, Gpio13, Input>,
         dio1: PinDriver<'d, Gpio14, Input>,
     ) -> anyhow::Result<Self> {
-        // Fix: Sx1262 variant construction
-        let iv = Sx126xVariant::Sx1262(nss, rst, busy, dio1);
-
-        // config is `lora_phy::sx126x::Config`
         let config = lora_phy::sx126x::Config {
-            // chip field removed/inferred in newer versions or handled by Variant
             tcxo_ctrl: Some(TcxoCtrlVoltage::Ctrl1V7),
             use_dcdc: true,
             rx_boost: false,
         };
 
-        let sx126x = Sx126x::new(spi, iv, config);
+        // Construct Sx1262 directly
+        let radio_kind = Sx1262::new(spi, nss, rst, busy, dio1, AsyncEts, config);
 
-        // Use AsyncEts
-        let lora = LoRa::new(sx126x, true, AsyncEts)
+        let lora = LoRa::new(radio_kind, true, AsyncEts)
             .await
             .map_err(|e| anyhow::anyhow!("LoRa init failed: {:?}", e))?;
 
