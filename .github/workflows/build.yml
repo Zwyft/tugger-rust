@@ -28,6 +28,8 @@ jobs:
       uses: dtolnay/rust-toolchain@stable
 
     - name: Install espup and ESP toolchain
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         cargo +stable install espup
         espup install
