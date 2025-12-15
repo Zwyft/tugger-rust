@@ -32,6 +32,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         cargo +stable install espup
+        cargo +stable install ldproxy
         espup install
         source ~/export-esp.sh
         
