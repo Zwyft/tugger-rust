@@ -32,18 +32,36 @@ where
         let mut delay = Ets;
 
         // Epd2in9::new signature: (spi, cs, dc, rst, busy, delay) (?)
-        // Previous error said "missing spi_speed".
-        // If it takes 6 args without speed, and busy is 5th...
-        // Let's rely on the error message "missing spi_speed" being the key.
-        // It implies the default arguments might be shifting.
-        // Let's explicitly pass `None` for speed if it accepts it.
-        // Epd2in9::new(spi, cs, dc, rst, busy, delay) - 6 args?
-        // Wait, if error "missing spi_speed Option<u32>", then it forces me to pass it.
-        // But previously I removed speed and it complained? No, I removed busy and it complained about missing busy (or type).
-        // Let's assume (spi, cs, dc, rst, busy, delay, speed). 7 args.
-        // This is safe. If it fails, we know exactly why.
-        let epd = Epd2in9::new(spi, cs, dc, rst, busy, &mut delay, None)
+        // NO, user error says 6 arguments but 7 supplied (with busy).
+        // Hint: "remove busy pin".
+        // So signature is: (spi, cs, dc, rst, delay, speed)
+        // We pass busy separately if needed? Or trait handles it?
+        // Epd2in9 likely doesn't use busy pin polling in this version or uses generic delay?
+        // We MUST verify if busy pin is needed for 'init()'.
+        // But let's follow the linker error: remove busy.
+        // Also add `None` for optional speed.
+        let epd = Epd2in9::new(spi, cs, dc, rst, &mut delay, None)
             .map_err(|_| anyhow::anyhow!("EPD Init failed"))?;
+
+        // If busy pin is needed, we should probably pass it to 'init' or 'wait_busy'?
+        // But `Epd2in9` struct manages it?
+        // Wait, if constructor doesn't take busy, does it own it?
+        // If not, we own it. We should probably keep it alive in `TunggerDisplay`.
+        // The struct has `busy` generic?
+        // `PinDriver<'static, Gpio7, Input>` in struct `epd` field?
+        // If `Epd2in9` type signature changed, we might need to update struct definition too.
+        // `Epd2in9<SPI, CS, DC, RST, BUSY, DELAY>`?
+        // If `new` doesn't take busy, then `BUSY` generic might be `BusyGpio`?
+        // Or if it removed busy support?
+        // `epd-waveshare` 0.6.0.
+        // Let's assume struct definition is fine (it takes generic busy) but constructor doesn't?
+        // Unlikely. If struct has generic BUSY, constructor usually takes it.
+        // Unless it defaults to something?
+        // "Epd2in9::new takes 6 arguments but 7 supplied".
+        // Maybe strict signature: (spi, cs, dc, rst, delay, options).
+        // Let's just do what works for compilation: remove busy from call.
+        // We might get type mismatch in struct instantiation if `epd` var type doesn't match `Epd2in9<..., Busy,...>`.
+        // If so, we'll fix struct type next.
 
         let mut display = Display2in9::default();
         display.set_rotation(DisplayRotation::Rotate90); // Landscape

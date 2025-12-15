@@ -126,22 +126,13 @@ fn main() -> anyhow::Result<()> {
 
     // Downgrade pins for Radio
     // Use `into_output()` and `into_input()` (not any).
-    // But `into_output()` returns `PinDriver<'d, AnyOutputPin, Output>`?
-    // No, `into_output()` creates a driver from a pin.
-    // If we ALREADY have a PinDriver (from hardware::init), we need to convert the PinDriver to dynamic.
-    // `PinDriver` has `into_dynamic_pin()`, no?
-    // Or `PinDriver::new(driver.pin().into_dynamic()...)`?
-    // Actually `board.lora_nss` IS a `PinDriver`.
-    // We want `PinDriver<'d, AnyOutputPin, Output>`.
-    // `PinDriver` has `map`? No.
-    // We can downgrade execution: `board.lora_nss.downgrade_output()`.
-    // `downgrade_output()` converts `PinDriver<GpioX, Output>` to `PinDriver<AnyOutputPin, Output>`.
-    // Similarly `downgrade_input()`.
-    
-    let lora_nss = board.lora_nss.downgrade_output();
-    let lora_rst = board.lora_rst.downgrade_output();
-    let lora_busy = board.lora_busy.downgrade_input();
-    let lora_dio1 = board.lora_dio1.downgrade_input();
+    // `PinDriver` should have these methods to convert to dynamic pin driver.
+    // If board.lora_nss is PinDriver<Gpio8, Output>, .into_output()?
+    // Let's try explicit map if needed, but error says use `into_output`.
+    let lora_nss = board.lora_nss.into_output().map_err(|e| anyhow::anyhow!("Pin error {:?}", e))?;
+    let lora_rst = board.lora_rst.into_output().map_err(|e| anyhow::anyhow!("Pin error {:?}", e))?;
+    let lora_busy = board.lora_busy.into_input().map_err(|e| anyhow::anyhow!("Pin error {:?}", e))?;
+    let lora_dio1 = board.lora_dio1.into_input().map_err(|e| anyhow::anyhow!("Pin error {:?}", e))?;
 
     block_on(async {
         info!("Initializing Radio (Async)...");

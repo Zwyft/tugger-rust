@@ -1,5 +1,6 @@
 use esp_idf_hal::delay::Ets;
 use esp_idf_hal::gpio::*;
+use esp_idf_hal::timer::TimerDriver;
 use lora_phy::iv::GenericSx126xInterfaceVariant;
 use lora_phy::sx126x::{self, Sx1262, Sx126x};
 use lora_phy::LoRa;
