@@ -47,18 +47,20 @@ pub struct TunggerRadio<'d, SPI>
 where
     SPI: embedded_hal_async::spi::SpiDevice,
 {
+    // Generics: <SPI, IV, Delay>
+    // IV: GenericSx126xInterfaceVariant<CTRL, WAIT>
+    // CTRL: PinDriver<'d, AnyOutputPin, Output>
+    // WAIT: PinDriver<'d, AnyInputPin, Input>
     pub lora: LoRa<
         Sx126x<
             SPI,
             GenericSx126xInterfaceVariant<
-                PinDriver<'d, Gpio8, Output>,
-                PinDriver<'d, Gpio12, Output>,
-                PinDriver<'d, Gpio14, Input>,
-                PinDriver<'d, Gpio13, Input>,
+                PinDriver<'d, AnyOutputPin, Output>,
+                PinDriver<'d, AnyInputPin, Input>,
             >,
-            Ets,
+            TimerDriver<'d>,
         >,
-        Ets,
+        TimerDriver<'d>,
     >,
 }
 
@@ -68,10 +70,15 @@ where
 {
     pub async fn new(
         spi: SPI,
-        nss: PinDriver<'d, Gpio8, Output>,
-        rst: PinDriver<'d, Gpio12, Output>,
-        busy: PinDriver<'d, Gpio13, Input>,
-        dio1: PinDriver<'d, Gpio14, Input>,
+        // We accept concrete pins but downgrade them inside, or expect AnyPin?
+        // Let's expect downgraded pins from main to keep signature simple here?
+        // Or coerce here. Let's coerce here if possible, but PinDriver coercion consumes.
+        // Better to ask caller to downgrade to avoid generic explosion.
+        nss: PinDriver<'d, AnyOutputPin, Output>,
+        rst: PinDriver<'d, AnyOutputPin, Output>,
+        busy: PinDriver<'d, AnyInputPin, Input>,
+        dio1: PinDriver<'d, AnyInputPin, Input>,
+        delay: TimerDriver<'d>,
     ) -> anyhow::Result<Self> {
         let config = sx126x::Config {
             chip: Sx1262,
@@ -80,8 +87,8 @@ where
             rx_boost: false,
         };
 
-        let delay = Ets;
-
+        // Note: GenericSx126xInterfaceVariant::new signature:
+        // new(nss, reset, dio1, busy, ant_sw)
         let iv = GenericSx126xInterfaceVariant::new(nss, rst, dio1, busy, None)
             .map_err(|e| anyhow::anyhow!("IV init failed: {:?}", e))?;
 
