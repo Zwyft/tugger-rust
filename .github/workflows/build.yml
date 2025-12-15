@@ -1,0 +1,47 @@
+name: Build ESP32 Rust Firmware
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+  ESP_IDF_VERSION: v5.1.3 # Matching valid sync with esp-idf-svc 0.48
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y git wget flex bison gperf python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
+
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+
+    - name: Install espup and ESP toolchain
+      run: |
+        cargo +stable install espup
+        espup install
+        source ~/export-esp.sh
+        
+    - name: Build project
+      run: |
+        source ~/export-esp.sh
+        cargo build --release
+        
+    - name: Upload firmware artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: tugger-firmware
+        path: |
+          target/xtensa-esp32s3-espidf/release/tugger-device
+        if-no-files-found: warn
