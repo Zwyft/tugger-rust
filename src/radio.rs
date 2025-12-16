@@ -1,4 +1,4 @@
-use esp_idf_hal::delay::Ets;
+// use esp_idf_hal::delay::Ets;
 use esp_idf_hal::gpio::*;
 use esp_idf_hal::timer::TimerDriver;
 use lora_phy::iv::GenericSx126xInterfaceVariant;
@@ -59,7 +59,7 @@ where
                 PinDriver<'d, AnyOutputPin, Output>,
                 PinDriver<'d, AnyInputPin, Input>,
             >,
-            TimerDriver<'d>,
+            Sx1262,
         >,
         TimerDriver<'d>,
     >,

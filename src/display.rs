@@ -27,19 +27,11 @@ where
         cs: PinDriver<'static, Gpio4, Output>,
         dc: PinDriver<'static, Gpio5, Output>,
         rst: PinDriver<'static, Gpio6, Output>,
-        busy: PinDriver<'static, Gpio7, Input>, // Busy is concrete in main.rs
+        // busy param removed as it's not used in constructor
     ) -> anyhow::Result<Self> {
         let mut delay = Ets;
 
-        // Epd2in9::new signature: (spi, cs, dc, rst, busy, delay) (?)
-        // NO, user error says 6 arguments but 7 supplied (with busy).
-        // Hint: "remove busy pin".
-        // So signature is: (spi, cs, dc, rst, delay, speed)
-        // We pass busy separately if needed? Or trait handles it?
-        // Epd2in9 likely doesn't use busy pin polling in this version or uses generic delay?
-        // We MUST verify if busy pin is needed for 'init()'.
-        // But let's follow the linker error: remove busy.
-        // Also add `None` for optional speed.
+        // Epd2in9::new signature: (spi, cs, dc, rst, delay, options)
         let epd = Epd2in9::new(spi, cs, dc, rst, &mut delay, None)
             .map_err(|_| anyhow::anyhow!("EPD Init failed"))?;
 

@@ -1,6 +1,6 @@
 ```
 // embedded-hal-bus 0.1 location:
-use esp_idf_hal::gpio::*;
+// use esp_idf_hal::gpio::*;
 use esp_idf_hal::task::block_on;
 use esp_idf_svc::hal as esp_idf_hal;
 use log::*;
@@ -109,12 +109,13 @@ fn main() -> anyhow::Result<()> {
     // We need logic to handle `busy` if not passed to constructor.
     // But `TunggerDisplay::new` signature in `display.rs` expects `busy`.
     // I should update `display.rs` too. For now let's update `main.rs` call.
+    // Display Init
+    // Epd2in9::new now takes (spi, cs, dc, rst, delay, speed)
     let mut display = display::TunggerDisplay::new(
         &mut display_spi,
         board.display_cs,
         board.display_dc,
         board.display_rst,
-        board.display_busy, 
     )?;
 
     display.update(&mut display_spi, "Booting...")?;

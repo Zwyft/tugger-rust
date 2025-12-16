@@ -1,5 +1,5 @@
-   0.710236700s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="tugger-device"}: cargo::core::compiler::fingerprint: fingerprint error for tugger-device v0.1.0 (D:\AntigravityProjects\Tugr)/Check { test: false }/TargetInner { name: "tugger-device", doc: true, ..: with_path("D:\\AntigravityProjects\\Tugr\\src\\main.rs", Edition2021) }
-   0.710324700s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="tugger-device"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\tugger-device-80a9356f1b827836\bin-tugger-device`
+   0.684120100s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="tugger-device"}: cargo::core::compiler::fingerprint: fingerprint error for tugger-device v0.1.0 (D:\AntigravityProjects\Tugr)/Check { test: false }/TargetInner { name: "tugger-device", doc: true, ..: with_path("D:\\AntigravityProjects\\Tugr\\src\\main.rs", Edition2021) }
+   0.684174400s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="tugger-device"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\tugger-device-80a9356f1b827836\bin-tugger-device`
 
 Caused by:
     The system cannot find the file specified. (os error 2)
@@ -27,8 +27,8 @@ Stack backtrace:
   19: git_midx_writer_new
   20: BaseThreadInitThunk
   21: RtlUserThreadStart
-   0.796434100s  INFO prepare_target{force=false package_id=esp-idf-hal v0.45.2 target="esp_idf_hal"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-hal v0.45.2/Check { test: false }/TargetInner { harness: false, ..: lib_target("esp_idf_hal", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-hal-0.45.2\\src\\lib.rs", Edition2021) }
-   0.796472800s  INFO prepare_target{force=false package_id=esp-idf-hal v0.45.2 target="esp_idf_hal"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\esp-idf-hal-32f80657c534b16a\lib-esp_idf_hal`
+   0.749033800s  INFO prepare_target{force=false package_id=esp-idf-hal v0.45.2 target="esp_idf_hal"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-hal v0.45.2/Check { test: false }/TargetInner { harness: false, ..: lib_target("esp_idf_hal", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-hal-0.45.2\\src\\lib.rs", Edition2021) }
+   0.749077400s  INFO prepare_target{force=false package_id=esp-idf-hal v0.45.2 target="esp_idf_hal"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\esp-idf-hal-32f80657c534b16a\lib-esp_idf_hal`
 
 Caused by:
     The system cannot find the file specified. (os error 2)
@@ -57,8 +57,8 @@ Stack backtrace:
   20: git_midx_writer_new
   21: BaseThreadInitThunk
   22: RtlUserThreadStart
-   0.806195500s  INFO prepare_target{force=false package_id=esp-idf-hal v0.45.2 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-hal v0.45.2/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-hal-0.45.2\\build.rs", Edition2021) }
-   0.806237300s  INFO prepare_target{force=false package_id=esp-idf-hal v0.45.2 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\esp-idf-hal-228c3aeb041f375f\run-build-script-build-script-build`
+   0.756015200s  INFO prepare_target{force=false package_id=esp-idf-hal v0.45.2 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-hal v0.45.2/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-hal-0.45.2\\build.rs", Edition2021) }
+   0.756045700s  INFO prepare_target{force=false package_id=esp-idf-hal v0.45.2 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\esp-idf-hal-228c3aeb041f375f\run-build-script-build-script-build`
 
 Caused by:
     The system cannot find the file specified. (os error 2)
@@ -90,8 +90,8 @@ Stack backtrace:
   23: git_midx_writer_new
   24: BaseThreadInitThunk
   25: RtlUserThreadStart
-   0.859843800s  INFO prepare_target{force=false package_id=esp-idf-sys v0.36.1 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-sys v0.36.1/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-sys-0.36.1\\build\\build.rs", Edition2021) }
-   0.859881600s  INFO prepare_target{force=false package_id=esp-idf-sys v0.36.1 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\esp-idf-sys-3207a400574da3eb\run-build-script-build-script-build`
+   0.797717600s  INFO prepare_target{force=false package_id=esp-idf-sys v0.36.1 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-sys v0.36.1/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-sys-0.36.1\\build\\build.rs", Edition2021) }
+   0.797753700s  INFO prepare_target{force=false package_id=esp-idf-sys v0.36.1 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\esp-idf-sys-3207a400574da3eb\run-build-script-build-script-build`
 
 Caused by:
     The system cannot find the file specified. (os error 2)
@@ -124,8 +124,8 @@ Stack backtrace:
   24: git_midx_writer_new
   25: BaseThreadInitThunk
   26: RtlUserThreadStart
-   0.864631400s  INFO prepare_target{force=false package_id=esp-idf-sys v0.36.1 target="esp_idf_sys"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-sys v0.36.1/Check { test: false }/TargetInner { harness: false, ..: lib_target("esp_idf_sys", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-sys-0.36.1\\src\\lib.rs", Edition2021) }
-   0.864669200s  INFO prepare_target{force=false package_id=esp-idf-sys v0.36.1 target="esp_idf_sys"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\esp-idf-sys-43ab484743446852\lib-esp_idf_sys`
+   0.802816900s  INFO prepare_target{force=false package_id=esp-idf-sys v0.36.1 target="esp_idf_sys"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-sys v0.36.1/Check { test: false }/TargetInner { harness: false, ..: lib_target("esp_idf_sys", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-sys-0.36.1\\src\\lib.rs", Edition2021) }
+   0.802846700s  INFO prepare_target{force=false package_id=esp-idf-sys v0.36.1 target="esp_idf_sys"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\esp-idf-sys-43ab484743446852\lib-esp_idf_sys`
 
 Caused by:
     The system cannot find the file specified. (os error 2)
@@ -155,8 +155,8 @@ Stack backtrace:
   21: git_midx_writer_new
   22: BaseThreadInitThunk
   23: RtlUserThreadStart
-   0.871918200s  INFO prepare_target{force=false package_id=esp-idf-svc v0.50.1 target="esp_idf_svc"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-svc v0.50.1/Check { test: false }/TargetInner { harness: false, ..: lib_target("esp_idf_svc", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-svc-0.50.1\\src\\lib.rs", Edition2021) }
-   0.871963100s  INFO prepare_target{force=false package_id=esp-idf-svc v0.50.1 target="esp_idf_svc"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\esp-idf-svc-365e7a586df0a000\lib-esp_idf_svc`
+   0.807770200s  INFO prepare_target{force=false package_id=esp-idf-svc v0.50.1 target="esp_idf_svc"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-svc v0.50.1/Check { test: false }/TargetInner { harness: false, ..: lib_target("esp_idf_svc", ["lib"], "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-svc-0.50.1\\src\\lib.rs", Edition2021) }
+   0.807798500s  INFO prepare_target{force=false package_id=esp-idf-svc v0.50.1 target="esp_idf_svc"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\esp-idf-svc-365e7a586df0a000\lib-esp_idf_svc`
 
 Caused by:
     The system cannot find the file specified. (os error 2)
@@ -185,8 +185,8 @@ Stack backtrace:
   20: git_midx_writer_new
   21: BaseThreadInitThunk
   22: RtlUserThreadStart
-   0.874717500s  INFO prepare_target{force=false package_id=esp-idf-svc v0.50.1 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-svc v0.50.1/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-svc-0.50.1\\build.rs", Edition2021) }
-   0.874750300s  INFO prepare_target{force=false package_id=esp-idf-svc v0.50.1 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\esp-idf-svc-aae38eb48ab3aea2\run-build-script-build-script-build`
+   0.810065700s  INFO prepare_target{force=false package_id=esp-idf-svc v0.50.1 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for esp-idf-svc v0.50.1/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\jakef\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\esp-idf-svc-0.50.1\\build.rs", Edition2021) }
+   0.810095900s  INFO prepare_target{force=false package_id=esp-idf-svc v0.50.1 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\esp-idf-svc-aae38eb48ab3aea2\run-build-script-build-script-build`
 
 Caused by:
     The system cannot find the file specified. (os error 2)
@@ -218,8 +218,8 @@ Stack backtrace:
   23: git_midx_writer_new
   24: BaseThreadInitThunk
   25: RtlUserThreadStart
-   0.904092800s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for tugger-device v0.1.0 (D:\AntigravityProjects\Tugr)/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "D:\\AntigravityProjects\\Tugr\\build.rs", Edition2021) }
-   0.904130700s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\tugger-device-f8538dcf2f88eef8\run-build-script-build-script-build`
+   0.836347900s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for tugger-device v0.1.0 (D:\AntigravityProjects\Tugr)/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "D:\\AntigravityProjects\\Tugr\\build.rs", Edition2021) }
+   0.836375900s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\tugger-device-f8538dcf2f88eef8\run-build-script-build-script-build`
 
 Caused by:
     The system cannot find the file specified. (os error 2)
@@ -250,8 +250,8 @@ Stack backtrace:
   22: git_midx_writer_new
   23: BaseThreadInitThunk
   24: RtlUserThreadStart
-   0.906082100s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="tugger-device"}: cargo::core::compiler::fingerprint: fingerprint error for tugger-device v0.1.0 (D:\AntigravityProjects\Tugr)/Check { test: true }/TargetInner { name: "tugger-device", doc: true, ..: with_path("D:\\AntigravityProjects\\Tugr\\src\\main.rs", Edition2021) }
-   0.906125000s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="tugger-device"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\tugger-device-f15d164ae3d60277\test-bin-tugger-device`
+   0.837583400s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="tugger-device"}: cargo::core::compiler::fingerprint: fingerprint error for tugger-device v0.1.0 (D:\AntigravityProjects\Tugr)/Check { test: true }/TargetInner { name: "tugger-device", doc: true, ..: with_path("D:\\AntigravityProjects\\Tugr\\src\\main.rs", Edition2021) }
+   0.837610200s  INFO prepare_target{force=false package_id=tugger-device v0.1.0 (D:\AntigravityProjects\Tugr) target="tugger-device"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\AntigravityProjects\Tugr\target\xtensa-esp32s3-espidf\debug\.fingerprint\tugger-device-f15d164ae3d60277\test-bin-tugger-device`
 
 Caused by:
     The system cannot find the file specified. (os error 2)
@@ -318,4 +318,3 @@ Caused by:
                at D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl:288
     16: BaseThreadInitThunk
     17: RtlUserThreadStart
-warning: build failed, waiting for other jobs to finish...

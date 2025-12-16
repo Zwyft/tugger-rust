@@ -1,8 +1,6 @@
 use esp_idf_hal::gpio::*;
 use esp_idf_hal::peripherals::Peripherals;
-use esp_idf_hal::spi::config::Config;
 use esp_idf_hal::spi::*;
-use esp_idf_hal::units::FromValueType;
 
 pub struct Board {
     pub spi_bus: SpiDriver<'static>,
